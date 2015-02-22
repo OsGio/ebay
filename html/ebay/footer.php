@@ -19,3 +19,5 @@ Copyright, Wasabi Co.ltd
 
 <script src="js/jquery.remodal.min.js"></script>
 <link rel="stylesheet" href="css/jquery.remodal.css">
+<!-- <script src="./jquery-1.11.1.min.js"></script>
+<script src="./js/sku.js"></script> -->

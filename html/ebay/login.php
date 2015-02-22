@@ -117,8 +117,5 @@
 
 
 <p id="copy">Copyright, Wasabi Co.ltd</p>
-
-
-
 </body>
 </html>

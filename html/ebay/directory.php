@@ -1,9 +1,7 @@
 <?php include('header.php');
 $db = new dbclass();
 	$username = $_SESSION["CONVERTER_USERID"];
-
     if(isset($_GET["exec"]) && $_GET["exec"] == "1"){
-
 		if($username == ADMIN){
 			$sql = "delete from `default_change_mst`";
 			$db -> Exec($sql);
@@ -337,7 +335,6 @@ function removeList(obj) {
 基本的には自動で変換がされますが、eBayカテゴリに特定しづらいものや該当しないものは、この画面にエラーとして出てきます。<br>
 最下部の「保存」をクリックすれば、設定を保存しておくことができます。
 </p>
-
 </div>
 </section>
 
@@ -440,6 +437,22 @@ $db = new dbclass();
 <a href="files/directory-temp.csv" style="background:#dcdcdc;padding:10px 15px;">変換登録サンプルファイルのダウンロード</a>
 </div>
 
+<table class="torikomi3">
+	<tr>
+		<td><span>セレクトSKUファイルを選択：</span></td>
+		<td><input type="file" name="sku"></td>
+		<td align="right">
+		<input type="image" src="img/btn_torikomi2.gif" onclick="javascript:importSku();">
+		<?php
+		if($_SESSION["CONVERTER_USERID"] == ADMIN){
+		?>
+		 >><input type="button" onclick="javascript:download();" value="  CSVダウンロード  ">
+		<?php }
+		?>
+		</td>
+	</tr>
+</table>
+
 
 
  </div>
@@ -459,7 +472,8 @@ $db = new dbclass();
 
 <div id="footer">
 <?php include('footer.php'); ?>
+<script src="./jquery-1.11.1.min.js"></script>
+<script src="./js/sku.js"></script>
 </div>
-
 </body>
 </html>
