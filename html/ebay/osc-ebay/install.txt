@@ -1,0 +1,30 @@
+Title: OSC-Ebay
+Description: Automatically sync your oscmax store with your ebay store
+Project URL: http://code.google.com/p/ebay-osc/
+Author: Jason Clark aka Mithereal
+Requirements: OSCMax 2.025
+
+#1: In catlog/admin/includes/filenames.php  add:
+	define('FILENAME_EBAY_VENDORS', 'ebay.php');
+	
+#2:	In catlog/admin/index.php  add:
+	array('title' => BOX_CONFIGURATION_EBAY, 'link' => tep_href_link(FILENAME_OSC_EBAY, 'selected_box=ebay&gID=90'))
+	
+#3 diff/merge catlog/admin/catagories.php
+
+#4:	Import install.sql via phpmyadmin.
+
+#5 in /catalog/admin/includes/languages/english.php add		
+	define('BOX_CONFIGURATION_EBAY','Ebay Settings');
+
+#6 in /catalog/admin/includes/filenames.php add   
+	define('FILENAME_OSC_EBAY', 'ebay.php');
+#7 edit /catalog/ebay/class/configure.php
+
+ebay sync modes are as follows: EBAY_AUTHORITY //always trust ebay for product weight and quantity
+								SMART_SYNC // product quantitys are adjusted from osc stock in respect to ebay quantity
+								OSC_AUTHORITY  //no weight or stock changes will take place
+								
+
+
+ps: I am seeking employment in this desolate country usa, if you have any jobs for me please email <mithereal@gmail.com>

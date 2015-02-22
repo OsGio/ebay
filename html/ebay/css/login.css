@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+/*--------------------------------------
+	  login
+--------------------------------------*/
+#loginBg{
+background:url(background-photo.jpg) no-repeat 0 0;
+background-size: cover;
+width:100%;
+}
+
+#login {
+	background:rgba(255,255,255,0.8);
+	border: solid 1px #fff;
+	margin: 4% auto 35px;
+	padding: 35px 0;
+	width: 670px;
+	overflow: hidden;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+
+#login h1 {
+	margin: 0 auto 20px;
+	width: 247px;
+}
+
+#login h2 {
+	color:#333;
+	font-weight: bold;
+	font-size: x-large;
+}
+
+#login span.warn {
+	color:#E62929;
+	font-weight: bold;
+	font-size: small;
+	text-align: center;
+}
+
+#login form {
+	margin: 0 auto;
+	width: 85%;
+}
+#login form span{
+	padding: 0 2px;
+	font-weight: bold;
+	font-size: small;
+}
+
+#login form dt {
+	font-weight: bold;
+	float: left;
+	width: 10em;
+	padding: 15px 10px;
+	text-align: right;
+}
+
+#login form dd {
+	padding: 12px;
+}
+
+
+#login form input,
+#login form textarea {
+	padding: 8px 4px;
+	margin: 0 5px 0;
+	border: solid 1px #ccc;
+	border-radius: 3px;
+}
+#login form input[type="text"]{width: 50%;}
+#login form input[type="password"]{width: 50%;}
+#login form input[type="checkbox"]{
+	margin:10px 10px 10px 170px;
+	text-align: center;
+	width: 10%;
+	padding:0px 0px 3px;
+}
+#login form input[type="checkbox"]{
+	border: none;
+}
+
+#login form input[type="submit"]{
+	border: none;
+	margin:10px 120px 10px 180px;
+	width: 40%;
+	text-align: center;
+}
+#login form label{
+	padding:5px 0px 0px;
+}
+
+#loginbtn {
+
+}
+#login form .submit,
+#login form .checkbox {
+
+}
+
+#login form input.checkbox {width: auto;}
+
+#login form #loginbtn {
+	background: url(../img/login.gif) no-repeat;
+	cursor: pointer;
+	height: 50px;
+	width: 144px;
+	margin: 30px 0 10px 38%;
+}
+
+#login form .submit:hover {
+	opacity: 0.80;
+	filter: alpha(opacity=80);
+	-ms-filter: "alpha( opacity=80)";
+}
+
+#login p {
+	text-align: center;
+	font-size: 12px;
+}
+
+#login iframe {
+	border: 2px #ddd solid;
+	width:100%;
+}
+
+#loginBg h2,
+#loginBg #copy {
+	text-align: center;
+	margin: 12px auto 0;
+	font-size: 12px;
+	color:#333;
+
+}
+
+
+.btn_sousin{
+	background: -moz-linear-gradient(top,#88C936 0%,#5FB424);
+	background: -webkit-gradient(linear, left top, left bottom, from(#88C936), to(#5FB424));
+	border: 1px solid #5FB424;
+	color:#FFF;
+	width: 200px;
+	padding: 20px 0;
+	cursor:pointer;
+	font-size:16px;
+	font-weight:bold;
+}
+
+
+

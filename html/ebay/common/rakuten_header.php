@@ -1,0 +1,35 @@
+<?
+	//	楽天CSVヘッダ対応関係
+	$rakuten_csvhead_t = array(
+		"コントロールカラム" => "column_name",
+		"商品管理番号（商品URL）" => "product_url",
+		"商品番号" => "product_no",
+		"全商品ディレクトリID" => "directory_id",
+		"タグID" => "tag_id",
+		"PC用キャッチコピー" => "pc_tag_line",
+		"モバイル用キャッチコピー" => "mobile_tag_line",
+		"商品名" => "product_name",
+		"販売価格" => "sell_price",
+		"表示価格" => "show_price",
+		"消費税" => "tax",
+		"送料" => "postage",
+		"倉庫指定" => "warehouse",
+		"商品情報レイアウト" => "layout",
+		"PC用商品説明文" => "pc_introduce",
+		"モバイル用商品説明文" => "mobile_introduce",
+		"スマートフォン用商品説明文" => "sp_introduce",
+		"PC用販売説明文" => "pc_promote",
+		"商品画像URL" => "img_url",
+		"商品画像名（ALT）" => "img_name",
+		"販売期間指定" => "sell_duration",
+		"在庫タイプ" => "stock_type",
+		"在庫数" => "stock_quantity",
+		"ヘッダー・フッター・レフトナビ" => "header",
+		"表示項目の並び順" => "order_name",
+		"共通説明文（小）" => "small_introduce",
+		"目玉商品" => "loss_leader",
+		"共通説明文（大）" => "big_introduce",
+		"レビュー本文表示" => "review",
+		"海外配送管理番号" => "foreign_no"
+	);
+?>

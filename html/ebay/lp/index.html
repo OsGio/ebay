@@ -1,0 +1,654 @@
+﻿<!doctype html>
+<!--[if IE 8]><html lang="ja" class="ie8"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="ja"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>使える！簡単！海外販売ネットショップ商品データ移行｜ebay出品データ変換</title>
+<meta name="description" content="">
+<meta name="keywords" content="ト">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="top_css/normalize.css">
+<link rel="stylesheet" href="top_css/style.css">
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.easing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/jquery.backgroundSize.js"></script>
+<script>
+$(function() {
+$(elem).css( "background-size", "cover" );
+$(elem).css( "background-size", "contain" );
+});
+</script>
+<![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	var setImg = '#mainImg';
+	var fadeSpeed = 1500;
+	var switchDelay = 5000;
+
+	$(setImg).children('img').css({opacity:'0'});
+	$(setImg + ' img:first').stop().animate({opacity:'1',zIndex:'20'},fadeSpeed);
+
+	setInterval(function(){
+		$(setImg + ' :first-child').animate({opacity:'0'},fadeSpeed).next('img').animate({opacity:'1'},fadeSpeed).end().appendTo(setImg);
+	},switchDelay);
+});
+
+$(function() {
+    var topBtn = $('#page-top');    
+
+    //スクロールしてトップ
+    topBtn.click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+</script>
+
+
+</head>
+<body>
+
+<div id="container">
+
+
+
+<div class="team-navbar inverse">
+
+  <div class="container position-relative">
+
+    <a id="page-top" href="#wrap"><img class="siteid" src="images/logo.png" /></a>
+
+    <ul class="unstyled navigation">
+      <li><a class="btn-primary" href="https://world-converter.com/ebay/register.php">無料アカウント登録</a></li>
+      <li><span class="divider">|</span></li>
+      <li><a class="text" href="https://world-converter.com/ebay/login.php">ログイン</a></li>
+    </ul>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<header>
+	<div id="mainvisual">
+		<section>
+
+
+<div id="mainImg">
+<img src="images/slide01.png">
+<img src="images/slide02.png">
+<img src="images/slide03.png">
+<img src="images/slide04.png">
+<img src="images/slide05.png">
+</div>
+
+
+			<img id="mainphoto" src="images/slide_close.gif" alt="">
+
+			<img class="arrow" src="images/arrow_down.png" alt="">
+		</section>
+	</div>
+</header><!--/#header-->
+
+
+
+
+<!--
+<nav>
+<ul class="menu1">
+		<li id="nv00" class="current"><a href="#container"><img src="images/nav_header.png" alt="kindal"></a></li>
+		<li><img src="images/nav_line.png" alt=""></li>
+		<li id="nv01"><a href="#soy"><img src="images/nav_menu1.png" alt="選ばれる理由"></a></li>
+		<li id="nv02"><a href="#kaitori"><img src="images/nav_menu2.png" alt="安心の理由"></a></li>
+		<li id="nv03"><a href="#mypage"><img src="images/nav_menu3.png" alt="リピートの理由"></a></li>
+		<li id="nv04"><a href="#voice"><img src="images/nav_menu4.png" alt="お客様の声"></a></li>
+		<li id="nv05"><a href="#flow"><img src="images/nav_menu5.png" alt="発送の流れ"></a></li>
+		<li id="nv06"><a href="#faq"><img src="images/nav_menu6.png" alt="よくある質問"></a></li>
+		<li><img src="images/nav_footer.png" alt=""></li>
+</ul>
+</nav>
+-->
+
+
+
+
+<div id="catch">
+		<section>
+
+<div class="left_box">
+<img src="images/catch_copy.gif" alt="あなたの商品が世界70億人のマーケットに出品されるまで約10分" />
+<p>
+楽天市場からダウンロードしたCSVを取り込み、ebay出品用CSVに変換されるまで、100商品でも5分あれば十分です。<br><br>
+ワンクリック出品なら、CSV変換から数秒でアップロードが完了します。<br>
+楽天ディレクトリとebayカテゴリの紐付け作業も自動で変換されます。<br>
+まずは動画をご覧ください　→
+</p>
+</div>
+
+<div class="right_box">
+<img src="images/sample.gif" alt="動画が入るよ" width="500" height="350" style="margin:20px 0;" />
+<img src="images/catch_illust.gif" alt="楽天データ取り込み、英語翻訳設定、ebay出品に変換" />
+</div>
+
+
+
+<div id="action">
+	<div class="wrap">
+		<a href="https://world-converter.com/ebay/register.php" class="btn_go"><img src="images/btn_go.gif" alt="無料・新規アカウント登録はこちら"></a>
+	</div>
+</div>
+
+
+
+<img src="images/catch_ebay.gif" alt="ebayは世界最大級のオークションサイト" style="margin:30px 0;" />
+
+
+
+		</section>
+</div><!--catch END-->
+
+
+
+
+
+
+<div id="contents">
+
+
+
+
+
+
+	<div id="nayami">
+		<section>
+			<img src="images/nayami_eigo.png" alt="出品したいけど、英語がわからない">
+			<img src="images/nayami_ebay.png" alt="ebayのことがわからない、知らない">
+		</section>
+
+		<div class="tri"><img src="images/arrow_lightgreen.png" alt=""></div>
+
+	</div><!--/#nayami-->
+
+
+
+
+	<div id="merit">
+		<section>
+
+<h2><img src="images/merit_title.gif" alt="ここがすごい！データ移行ツール/プロにも選ばれる5大特長"></h2>
+
+
+   <div class="left_img">
+
+	<div class="img">
+	<img src="images/merit_01_img.gif" alt="" />
+	</div>
+
+	<div class="text">
+	<h3><img src="images/merit_01.gif" alt="英語がわからなくても、海外進出できる！" /></h3>
+	<p>
+	ツールではCSVデータ変換時に自動で英語に翻訳します。<br />
+	翻訳ソフトを使ったり、調べて1件1件入力しなおす必要はありません。<br />
+	海外進出に向け、必要な情報もサポートしておりますので、英語が話せなくても大丈夫！<br>
+	そして、サイト内には辞書登録機能もあって、どんどんサイトを使いやすく成長させていただけます！
+	</p>
+	</div>
+
+   </div>
+
+
+   <div class="right_img">
+
+	<div class="text">
+	<h3><img src="images/merit_02.gif" alt="キーワードの置換・追加・削除は１クリック！" /></h3>
+	<p>
+	楽天市場で独自のキーワードをいれておくこともありと思います。<br />
+	例えば、【楽ギフ】など、ebayでは記載の必要の無い文言は削除したいですよね？<br />
+	そんな場合は、一括でその文言だけを削除できます。<br />
+	また、同じように一括で特定のキーワードを追加したり、置き換えたりも自由自在！<br />
+	アカウントに保存できるので、次回から入力しなくても大丈夫！
+	</p>
+	</div>
+
+	<div class="img">
+	<img src="images/merit_02_img.gif" alt="" />
+	</div>
+
+   </div>
+
+
+   <div class="left_img">
+
+	<div class="img">
+	<img src="images/merit_03_img.gif" alt="" />
+	</div>
+
+	<div class="text">
+	<h3><img src="images/merit_03.gif" alt="楽天ディレクトリとebayカテゴリを簡単紐付け！" /></h3>
+	<p>
+	楽天にディレクトリIDがあるように、ebayでも出品カテゴリが存在します。<br />
+	楽天ディレクトリとebayカテゴリを紐付けることができ、変換時、同時に変換されます。<br />
+	設定画面でも、日本語で選択していけるので、ご安心ください。<br />
+	そのまま保存していけるので、次回からは入力の手間も省けます。<br />
+	※有償機能となります。
+	</p>
+	</div>
+
+   </div>
+
+
+   <div class="right_img">
+
+	<div class="text">
+	<h3><img src="images/merit_04.gif" alt="ワンクリックでebayへ一括出品！" /></h3>
+	<p>
+	変換されたCSVは、実はワンクリックで出品が可能です！<br />
+	ebayで用意されている出品ツールを使ってのアップロードももちろんできますが、ワンクリック出品でもっと時間短縮！<br />
+	秒速で出品ができます！<br />
+	※有償機能となります。
+	</p>
+	</div>
+
+	<div class="img">
+	<img src="images/merit_04_img.gif" alt="" />
+	</div>
+
+   </div>
+
+
+   <div class="left_img">
+
+	<div class="img">
+	<img src="images/merit_05_img.gif" alt="" />
+	</div>
+
+	<div class="text">
+	<h3><img src="images/merit_05.gif" alt="クラウドサービスだから、どこでも変換・出品！" /></h3>
+	<p>
+	本サービスはパソコンにインストールをして使用するソフトではありません。<br />
+	インターネットのつながる環境であれば、どこでも作業ができるクラウドサービスです。<br />
+	会社のパソコン、自宅のパソコン、カフェでゆっくりしながら、出張先で。<br />
+	いつでもどこでも変換・出品が可能です！
+	</p>
+	</div>
+
+   </div>
+
+
+	</section>
+</div><!-- merit END -->
+
+<div class="tri"><img src="images/arrow_green.png" alt=""></div>
+
+
+
+
+
+
+
+
+
+<div id="flow" class="cf">
+	<section>
+	<h3><img src="images/flow_title.png" alt="かんたんステップで、いつでもだれでも商品登録" /></h3>
+
+	<img src="images/flow_illust.png" alt="楽天データ取り込み、英語翻訳設定、ebay出品に変換" />
+
+	<div class="box1">
+	<p>
+	まずは楽天市場より商品データCSVをダウンロードします。（事前に楽天市場の管理画面より申し込みが必要となります。）<br />
+	ダウンロードしたCSVファイルを管理画面より取り込みます。<br>
+	取り込み時間は数秒です！
+	</p>
+	</div>
+
+	<div class="box2">
+	<p>
+	キーワード登録をすることで、追加・置換・削除を変換します。<br />
+	<br />
+	英語辞書に登録した情報に翻訳するときもこのステップで。
+	</p>
+	</div>
+
+	<div class="box3">
+	<p>
+	あとは変換ボタンを押すだけ！<br>
+	いったんデータをお預かりして、変換がすべて終ればメールでお知らせいたします。<br><br>
+	1000商品で2分あれば、変換作業は完了です。
+	</p>
+	</div>
+
+	<div class="box4">
+	<p>
+	変換したデータを、もうワンクリックでebayに一括出品します。（※有償機能です）<br><br>
+	CSVもダウンロード可能なので、ebay管理画面からアップロードもできます。
+	</p>
+	</div>
+
+	</section>
+</div>
+
+
+
+
+
+
+
+<div id="merit2" class="cf">
+	<section>
+
+	<h3><img src="images/merit2_title.gif" alt="まだまだある、選ばれる理由" /></h3>
+
+	<div class="merit2_box">
+	<img src="images/merit2_01.gif" alt="移行作業を一元管理" />
+	<p>
+	サイト内でアカウント管理、各メニュー、環境設定、取り込みから出品作業まですべて対応いたします。<br>ebayにログインしなくても、出品できちゃう♪
+	</p>
+	</div>
+
+	<div class="merit2_box">
+	<img src="images/merit2_02.gif" alt="わかりやすい管理画面" />
+	<p>
+	各ステップがメニューになっていますので、メニューの順番にそって進めれば、あっと言う間にebay出品できます。<br>5ステップで完了！
+	</p>
+	</div>
+
+	<div class="merit2_box">
+	<img src="images/merit2_03.gif" alt="使い方は動画でわかりやすく説明" />
+	<p>
+	動画を中心に説明を進めていきます。<br>ヘルプページも常時更新していきますので、安心してご利用いただけるはず。
+	</p>
+	</div>
+
+	<div class="merit2_box">
+	<img src="images/merit2_04.gif" alt="SSLでセキュリティも万全！" />
+	<p>
+	お客様の大切な情報は万全のセキュリティ体制でお守預かりいたします。<br>最大216bitSSL対応でガッチリ守ります！
+	</p>
+	</div>
+
+	<div class="merit2_box">
+	<img src="images/merit2_05.gif" alt="中古品でも大丈夫。コンディション情報対応！" />
+	<p>
+	中古品を多く扱うebay。<br>そのための独自の項目にも対応しております。<br>細かく設定もできるのは本サービスだけ！
+	</p>
+	</div>
+
+	<div class="merit2_box">
+	<img src="images/merit2_06.gif" alt="圧倒的なノウハウで、安心サポート！" />
+	<p>
+	これまでebayに数多くの商品を出品してきた私たちだから知っている情報を、出し惜しみしません！<br>ノウハウも含め、サポートいたします！
+	</p>
+	</div>
+
+
+	</section>
+</div>
+
+<div class="tri"><img src="images/arrow_green.png" alt=""></div>
+
+
+
+
+
+
+<div id="price" class="cf">
+	<section>
+	<h3><img src="images/price_title.png" alt="海外販売ネットショップ商品データ移行　料金プラン" /></h3>
+
+	<table class="price_info">
+
+	<tr>
+	<th class="empty"></th>
+	<th class="bg_green">無料プラン<span>完全無料０円</span></th>
+	<th class="bg_blue">有料プラン<span>　年額今なら100,000円！（税別）</span></th>
+	</tr>
+
+
+	<tr>
+	<td class="bg">ディレクトリ紐付け設定</td>
+	<td>×</td>
+	<td>○</td>
+	</tr>
+
+	<tr>
+	<td class="bg">キーワード一括変換</td>
+	<td>○</td>
+	<td>○</td>
+	</tr>
+
+	<tr>
+	<td class="bg">英語翻訳辞書登録</td>
+	<td>○</td>
+	<td>○</td>
+	</tr>
+
+	<tr>
+	<td class="bg">ebay出品データ一括変換</td>
+	<td>○</td>
+	<td>○</td>
+	</tr>
+
+	<tr>
+	<td class="bg">変換CSVデータダウンロード</td>
+	<td>○</td>
+	<td>○</td>
+	</tr>
+
+	<tr>
+	<td class="bg">変換ログ確認</td>
+	<td>○</td>
+	<td>○</td>
+	</tr>
+
+
+	<tr>
+	<td class="bg">ワンクリック出品</td>
+	<td>×</td>
+	<td>○</td>
+	</tr>
+
+	<tr>
+	<td class="bg">ebay画像一括アップロード</td>
+	<td>×（一枚目のみ）</td>
+	<td>○</td>
+	</tr>
+
+
+	<tr>
+	<td class="bg">中古品取り扱い設定</td>
+	<td>○</td>
+	<td>○</td>
+	</tr>
+
+
+
+	</table>
+
+	</section>
+</div>
+
+
+
+<div id="action">
+	<div class="wrap" style="margin-bottom:30px;">
+	<h4>世界70億人のマーケット、7兆円市場へ。</h4>
+		<a href="https://world-converter.com/ebay/register.php" class="btn_go"><img src="images/btn_go.gif" alt="無料・新規アカウント登録はこちら"></a>
+	</div>
+</div>
+
+
+
+
+
+<div id="voice" class="cf">
+	<section>
+	<h3><img src="images/voice_title.png" alt="導入者様の声" /></h3>
+
+			<div class="voice" id="user01">
+				<div class="icon"><img src="images/voice01.png" width="50" height="50"></div>
+				<div class="txt">
+					<img src="images/fukidashi.png" alt="" width="15" height="16">
+					英語が話せなくても、ebay出品できました！<br>辞書登録もカンタンで、今では出品までホントに一瞬です！<br>
+					<small>スマホケースショップ 運営者様</small>
+				</div>
+			</div>
+
+			<div class="voice" id="user02">
+				<div class="icon"><img src="images/voice02.png" width="50" height="50"></div>
+				<div class="txt">
+					<img src="images/fukidashi.png" alt="" width="15" height="16">
+					丁寧で迅速なご対応、<br>ありがとうございました！<br>
+					<small>ジュエリーショップ　WEB担当者様</small>
+				</div>
+			</div>
+
+			<div class="voice" id="user03">
+				<div class="icon"><img src="images/voice03.png" width="50" height="50"></div>
+				<div class="txt">
+					<img src="images/fukidashi.png" alt="" width="15" height="16">
+					中古商品のコンディション対応は超便利★<br>
+					<small>中古バッグ専門店様</small>
+				</div>
+			</div>
+
+			<div class="voice" id="user04">
+				<div class="icon"><img src="images/voice04.png" width="50" height="50"></div>
+				<div class="txt">
+					<img src="images/fukidashi.png" alt="" width="15" height="16">
+					ebayへの出品ははじめてでしたが、サポートページも参考にして、自分だけでできました！<br>
+					<small>キッチン用品オンラインショップ様</small>
+				</div>
+			</div>
+
+			<div class="voice" id="user05">
+				<div class="icon"><img src="images/voice05.png" width="50" height="50"></div>
+				<div class="txt">
+					<img src="images/fukidashi.png" alt="" width="15" height="16">
+					ワンクリックでebay出品できたときは感動でした！<br>
+					<small>中古ケータイショップ 店長様</small>
+				</div>
+			</div>
+
+			<div class="voice" id="user06">
+				<div class="icon"><img src="images/voice06.png" width="50" height="50"></div>
+				<div class="txt">
+					<img src="images/fukidashi.png" alt="" width="15" height="16">
+					ebayカテゴリに変換するときも、日本語表記でわかりやすい！<br>
+					<small>レディースアパレル 販売担当者様</small>
+				</div>
+			</div>
+
+			<div class="voice" id="user07">
+				<div class="icon"><img src="images/voice07.png" width="50" height="50"></div>
+				<div class="txt">
+					<img src="images/fukidashi.png" alt="" width="15" height="16">
+					サポート動画がわかりやすい！<br>
+					<small>自転車パーツ専門店　店長様</small>
+				</div>
+			</div>
+
+			<div class="voice" id="user08">
+				<div class="icon"><img src="images/voice08.png" width="50" height="50"></div>
+				<div class="txt">
+					<img src="images/fukidashi.png" alt="" width="15" height="16">
+					まず、びっくりするのがデータ取り込みスピード！<br>データ変換もワンクリックで、完了お知らせメールからワンクリックで一括出品できるのが本当にいいですね。<br>
+					<small>アウトドア用品取り扱いショップ　販売責任者様</small>
+				</div>
+			</div>
+
+
+	</section>
+</div>
+
+
+
+
+
+<div id="faq" class="cf">
+	<section>
+
+	<h3><img src="images/faq_title.png" alt="よくあるご質問" /></h3>
+
+	<dl>
+
+	<dt>楽天の商品データはどうやって取り込んだらいいですか？</dt>
+	<dd>
+	CSV形式で取り込みが可能です。楽天の管理画面（RMS）からダウンロードができます。「詳細タイプ」を推奨しています。
+	</dd>
+
+	<dt>英語が話せないのですが。。。</dt>
+	<dd>
+	全データ自動翻訳をいたします。辞書登録もカンタンにできますので、ご安心ください。
+	</dd>
+
+	<dt>ebayに出品したことがないのですが、商品登録ができるか不安です。</dt>
+	<dd>
+	環境設定等もかんたんに選んでいただけますし、変換されたデータを管理画面からアップするだけで出品ができますので、ご安心ください。
+	</dd>
+
+	<dt>有償機能はどうやってお支払いすればいいんでしょうか？</dt>
+	<dd>
+	お客様マイページの中でお申し込み・Paypal決済でお支払いいただけます。
+	</dd>
+
+
+	</dl>
+
+
+	</section>
+</div>
+
+
+
+
+<div id="action">
+	<div class="wrap" style="margin-bottom:30px;">
+	<h4>回りにebayに出品した人がいない！？チャンスです！</h4>
+		<a href="https://world-converter.com/ebay/register.php" class="btn_go"><img src="images/btn_go.gif" alt="無料・新規アカウント登録はこちら"></a>
+	</div>
+</div>
+
+
+
+
+
+</div><!--/#contents-->
+
+
+
+
+
+
+
+
+<footer>
+<address><a href="http://wasab.net/" target="_blank">Copyright. Wasabi.co.ltd</address>
+</footer><!--/#footer-->
+
+
+</div><!--/#container-->
+
+
+
+</body>
+
+</html>
+
+
+

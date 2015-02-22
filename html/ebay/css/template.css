@@ -1,0 +1,392 @@
+@charset "utf-8";
+
+/*--------------------------------------
+	  template
+--------------------------------------*/
+#dataImport {
+}
+
+#dataImport h2 {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+#dataImport p {
+	color: #666;
+}
+
+#dataImport table {
+	margin: 20px 0 0;
+/*	width: 660px;*/
+	width:100%
+}
+
+#dataImport table .lineNone {
+	border: none;
+}
+
+#dataImport table span{
+	font-weight: bold;
+}
+
+#dataImport table th {
+	border-bottom: solid 1px #ddd;
+	font-weight: bold;
+	text-align: left;
+	padding: 12px 0 12px 16px;
+	vertical-align: middle;
+	width: 40%;
+}
+
+#dataImport table td {
+	border-bottom: solid 1px #ddd;
+	padding: 12px 0;
+	vertical-align: middle;
+	width: 30%;
+}
+
+#dataImport table td img {
+	float: left;
+}
+
+#dataImport table p {
+	color: #d38311;
+	font-size: 12px;
+	float: left;
+	margin: 6px 0 0 12px;
+	padding: 16px 0px 0 12px;
+}
+
+#dataImport table .info{
+	clear:both;
+	margin: 3px 0 0 12px;
+	padding: 2px 10px 0 2px;
+	display:block;
+}
+
+#dataImport table .busy {
+	background: url(../img/icon_arrow.gif) 0 9px no-repeat;
+	color: #333;
+	padding: 8px 0 0 28px;
+}
+
+#dataImport table .err {
+	color: #f00;
+	padding: 8px 0 0 28px;
+}
+
+#dataImport table .detail {
+	border: solid 1px #ddd;
+	font-size:small;
+}
+
+#dataImport h3 {
+	color: #000;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: middle;
+	padding: 20px 2px 0px 12px;
+}
+
+#dataImport table .detail th {
+	background: #ddd;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	padding: 2px 12px;
+	width:50%;
+}
+
+#dataImport table .detail td {
+	font-weight: none;
+	text-align: left;
+	vertical-align: middle;
+	padding: 2px 12px;
+}
+#dataImport  ul {
+	margin: 0;
+	padding: 0;
+}
+#dataImport ul li {
+	margin:0 0 0.5em 0;
+	list-style-type: square;
+	white-space: nowrap;
+	padding: 0;
+	font-size:small;
+	font-weight:bold;
+}
+#dataImport  ul li span {
+	font-weight: normal;
+	display: block;
+	clear: both;
+	padding:0px 30px;
+}
+
+#dataImport table .div_info{
+	clear:both;
+	padding:10px 50px;
+}
+
+#dataImport .description{
+	color: #222;
+	text-align: left;
+	padding:10px 12px;
+	font-weight: normal;
+}
+
+#dataImport table .help_title{
+	margin:0 auto;
+	padding:3px 0;
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+	background:#D23460;
+	color:#FFF;
+}
+#dataImport table .memobox{
+	margin:0 auto;
+	padding: 2px 12px;
+	text-align:left;
+	font-size:14px;
+	font-weight:bold;
+	background:#FFDEC3;
+}
+
+#dataedit {
+}
+
+#dataedit form input,
+#dataedit form select,
+#dataedit form textarea {
+	padding: 8px 4px;
+	margin: 0 5px 0;
+	border: solid 1px #ccc;
+	border-radius: 3px;
+}
+#dataedit form input[type="radio"]
+{
+	border: none;
+}
+
+#datadetail {
+/*	width:660px;    */
+	overflow: scroll;
+}
+
+#datadetail table td .shortinput{
+	width:100px;
+	text-align: right;
+/*	border-bottom:1px solid #ddd;*/
+}
+#datadetail .yahoo_pc{
+	width:100%;
+	text-align: right;
+}
+
+#dataedit form input[type="text"]{width: 100%;}
+#dataedit form input[type="image"]{border: none;}
+#dataedit form input[type="checkbox"]{
+	border: none;
+	margin-left:110px;
+	margin-top:5px;
+	width: 30px;
+}
+
+.dataconfig {width: 50%;}
+.dataname {width: 40%;}
+
+#dataedit form textarea {
+width: 100%;
+height: 7em;
+line-height: 1.5em;
+}
+
+#dataedit h2 {
+	color: black;
+	font-size: 20px;
+	font-weight: bold;
+	margin:0;
+	padding:0;
+}
+
+#dataedit p {
+	color: #666;
+}
+
+#dataedit table {
+	margin: 20px 0 0;
+	width: 660px;
+}
+
+#dataedit table .lineNone {
+	border: none;
+}
+
+#dataedit table th {
+	border-top: solid 1px #ddd;
+	font-weight: bold;
+	text-align: left;
+	padding: 2px 0 2px 4px;
+	vertical-align: middle;
+}
+
+#dataedit table th .lineNone{
+	border: none;
+}
+
+#dataedit table td .lineNone{
+	border: none;
+}
+
+
+#dataedit table td {
+/*	border-bottom: solid 1px #ddd;*/
+	vertical-align: middle;
+}
+
+#dataedit table th input{
+/*	border-bottom: solid 1px #ddd;*/
+	padding: 4px 50px 3px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+#dataedit table td .save{
+/*	border-bottom: solid 1px #ddd;*/
+	padding: 2px 50px 3px;
+	vertical-align: middle;
+	text-align: right;
+}
+
+
+#dataedit table .detail {
+	border: solid 1px #ddd;
+}
+
+#dataedit table td  .detail {
+	border: solid 1px #ddd;
+}
+
+
+#dataedit table td img {
+	float: left;
+}
+
+#dataedit table p {
+	color: #d38311;
+	font-size: 12px;
+	float: left;
+	margin: 6px 0 0 12px;
+}
+
+#dataedit table .busy {
+	background: url(../img/icon_arrow.gif) 0 9px no-repeat;
+	color: #333;
+	padding: 8px 0 0 28px;
+}
+
+#dataedit table .err {
+	color: #f00;
+	padding: 8px 0 0 28px;
+}
+
+/*	product edit page;*/
+
+#datadetail table {
+	font-size: x-small;
+/*	border:medium solid #aaaaaa;*/
+	border:solid 1px #aaaaaa;
+	color: #333;
+	margin-bottom: 10px;
+	width: 100%;
+	overflow: scroll;
+}
+#datadetail table th {
+	background-color: #FFDEC3;
+	border: solid 1px #aaaaaa;
+	font-weight: bold;
+/*	border-bottom:solid 2px #555; */
+	text-align: center;
+	padding:4px;
+}
+#datadetail table tr td {
+	padding: 6px;
+	text-align: left;
+	vertical-align: top;
+	border: solid 1px #aaaaaa;
+/*	border-bottom:1px solid #ddd;*/
+}
+
+#datadetail .infoa{
+	background-color: #C2E6EC;
+/*	border-bottom:1px solid #ddd;*/
+}
+
+#datadetail .infob{
+	background-color: #DDFDE1;
+/*	border-bottom:1px solid #ddd;*/
+}
+
+
+#dataedit  .message {
+	clear: both;
+	color: #d38311;
+	font-size: 100%;
+	font-weight: bold;
+	margin: 0 0 1em 0;
+	padding: 15px;
+    width:100%;
+    margin-left:10px;
+}
+
+form disabled {
+	opacity: 0.50;
+	filter: alpha(opacity=50);
+	-ms-filter: "alpha( opacity=50)";
+}
+
+
+input[type="image"]:hover {
+opacity: 0.70;
+	filter: alpha(opacity=70);
+	-ms-filter: "alpha( opacity=70)";
+}
+
+input[type="image"]:disabled
+ {
+	opacity: 0.50;
+	cursor:not-allowed;
+	filter: alpha(opacity=30);
+	-ms-filter: "alpha( opacity=30)";
+ }
+
+ #div_sub_opt {
+	padding: 0px 60px;
+ }
+
+
+#flashMessage.success
+{
+	padding: 0px 10px;
+	color:#EC4009;
+}
+#flashMessage.error
+{
+	padding: 10px 0px;
+	color:#ff0000;
+}
+
+
+.message,
+.cake-error,
+p.error,
+#flashMessage,
+{
+	padding: 10px 10px;
+	clear: both;
+	color: #00f;
+/*	border: 1px solid rgba(0, 0, 0, 0.5);*/
+}

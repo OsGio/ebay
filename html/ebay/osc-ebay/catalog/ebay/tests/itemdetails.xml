@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetItemResponse xmlns="urn:ebay:apis:eBLBaseComponents">
+  <!-- Standard Output Fields -->
+  <Ack> AckCodeType </Ack>
+  <Build> string </Build>
+  <CorrelationID> string </CorrelationID>
+  <Errors> ErrorType 
+    <ErrorClassification> ErrorClassificationCodeType </ErrorClassification>
+    <ErrorCode> token </ErrorCode>
+    <ErrorParameters ParamID="string"> ErrorParameterType 
+      <Value> string </Value>
+    </ErrorParameters>
+    <!-- ... more ErrorParameters nodes here ... -->
+    <LongMessage> string </LongMessage>
+    <SeverityCode> SeverityCodeType </SeverityCode>
+    <ShortMessage> string </ShortMessage>
+  </Errors>
+  <!-- ... more Errors nodes here ... -->
+  <HardExpirationWarning> string </HardExpirationWarning>
+  <Timestamp> dateTime </Timestamp>
+  <Version> string </Version>
+  <!-- Call-specific Output Fields -->
+  <Item> ItemType 
+    <ApplicationData> string </ApplicationData>
+    <ApplyBuyerProtection> BuyerProtectionDetailsType 
+      <BuyerProtectionSource> BuyerProtectionSourceCodeType </BuyerProtectionSource>
+      <BuyerProtectionStatus> BuyerProtectionCodeType </BuyerProtectionStatus>
+    </ApplyBuyerProtection>
+    <AttributeSetArray> AttributeSetArrayType 
+      <AttributeSet attributeSetID="int" attributeSetVersion="string"> AttributeSetType 
+        <Attribute attributeID="int"> AttributeType 
+          <Value> ValType 
+            <ValueID> int </ValueID>
+            <ValueLiteral> string </ValueLiteral>
+          </Value>
+          <!-- ... more Value nodes here ... -->
+        </Attribute>
+        <!-- ... more Attribute nodes here ... -->
+      </AttributeSet>
+      <!-- ... more AttributeSet nodes here ... -->
+    </AttributeSetArray>
+    <AutoPay> boolean </AutoPay>
+    <BestOfferDetails> BestOfferDetailsType 
+      <BestOfferCount> int </BestOfferCount>
+      <BestOfferEnabled> boolean </BestOfferEnabled>
+    </BestOfferDetails>
+    <BusinessSellerDetails> BusinessSellerDetailsType 
+      <AdditionalContactInformation> string </AdditionalContactInformation>
+    <Email> string </Email>
+      <Fax> string </Fax>
+      <LegalInvoice> boolean </LegalInvoice>
+      <TermsAndConditions> string </TermsAndConditions>
+      <TradeRegistrationNumber> string </TradeRegistrationNumber>
+      <VATDetails> VATDetailsType 
+        <BusinessSeller> boolean </BusinessSeller>
+        <RestrictedToBusiness> boolean </RestrictedToBusiness>
+        <VATID> string </VATID>
+        <VATPercent> float </VATPercent>
+        <VATSite> string </VATSite>
+      </VATDetails>
+    </BusinessSellerDetails>
+    <BuyerGuaranteePrice currencyID="CurrencyCodeType"> AmountType (double) </BuyerGuaranteePrice>
+    <BuyerProtection> BuyerProtectionCodeType </BuyerProtection>
+    <BuyerRequirementDetails> BuyerRequirementDetailsType 
+      <LinkedPayPalAccount> boolean </LinkedPayPalAccount>
+      <MaximumBuyerPolicyViolations> MaximumBuyerPolicyViolationsType 
+        <Count> int </Count>
+        <Period> PeriodCodeType </Period>
+      </MaximumBuyerPolicyViolations>
+      <MaximumItemRequirements> MaximumItemRequirementsType 
+        <MaximumItemCount> int </MaximumItemCount>
+        <MinimumFeedbackScore> int </MinimumFeedbackScore>
+      </MaximumItemRequirements>
+      <MaximumUnpaidItemStrikesInfo> MaximumUnpaidItemStrikesInfoType 
+        <Count> int </Count>
+        <Period> PeriodCodeType </Period>
+      </MaximumUnpaidItemStrikesInfo>
+      <MinimumFeedbackScore> int </MinimumFeedbackScore>
+      <ShipToRegistrationCountry> boolean </ShipToRegistrationCountry>
+      <VerifiedUserRequirements> VerifiedUserRequirementsType 
+        <MinimumFeedbackScore> int </MinimumFeedbackScore>
+        <VerifiedUser> boolean </VerifiedUser>
+      </VerifiedUserRequirements>
+      <ZeroFeedbackScore> boolean </ZeroFeedbackScore>
+    </BuyerRequirementDetails>
+    <BuyerResponsibleForShipping> boolean </BuyerResponsibleForShipping>
+    <BuyItNowPrice currencyID="CurrencyCodeType"> AmountType (double) </BuyItNowPrice>
+    <Charity> CharityType 
+      <CharityID> string </CharityID>
+      <CharityName> string </CharityName>
+      <CharityNumber> int </CharityNumber>
+      <DonationPercent> float </DonationPercent>
+      <LogoURL> string </LogoURL>
+      <Mission> string </Mission>
+      <Status> CharityStatusCodeType </Status>
+    </Charity>
+    <Country> CountryCodeType </Country>
+    <CrossBorderTrade> string </CrossBorderTrade>
+    <!-- ... more CrossBorderTrade nodes here ... -->
+    <CrossPromotion> CrossPromotionsType 
+      <ItemID> 220279512923 </ItemID>
+      <PrimaryScheme> PromotionSchemeCodeType </PrimaryScheme>
+      <PromotedItem> PromotedItemType 
+        <ItemID> ItemIDType </ItemID>
+        <ListingType> ListingTypeCodeType </ListingType>
+        <PictureURL> string </PictureURL>
+        <Position> int </Position>
+        <PromotionDetails> PromotionDetailsType 
+          <BidCount> int </BidCount>
+          <ConvertedPromotionPrice currencyID="CurrencyCodeType"> AmountType (double) </ConvertedPromotionPrice>
+          <PromotionPrice currencyID="CurrencyCodeType"> AmountType (double) </PromotionPrice>
+          <PromotionPriceType> PromotionItemPriceTypeCodeType </PromotionPriceType>
+        </PromotionDetails>
+        <!-- ... more PromotionDetails nodes here ... -->
+        <SelectionType> PromotionItemSelectionCodeType </SelectionType>
+        <TimeLeft> duration </TimeLeft>
+        <Title> string </Title>
+      </PromotedItem>
+      <!-- ... more PromotedItem nodes here ... -->
+      <PromotionMethod> PromotionMethodCodeType </PromotionMethod>
+      <SellerID> string </SellerID>
+      <ShippingDiscount> boolean </ShippingDiscount>
+    </CrossPromotion>
+    <Currency> CurrencyCodeType </Currency>
+    <Description> string </Description>
+    <DisableBuyerRequirements> boolean </DisableBuyerRequirements>
+    <DispatchTimeMax> int </DispatchTimeMax>
+    <ExtendedSellerContactDetails> ExtendedContactDetailsType 
+      <ClassifiedAdContactByEmailEnabled> boolean </ClassifiedAdContactByEmailEnabled>
+      <ContactHoursDetails> ContactHoursDetailsType 
+        <Hours1AnyTime> boolean </Hours1AnyTime>
+        <Hours1Days> DaysCodeType </Hours1Days>
+        <Hours1From> time </Hours1From>
+        <Hours1To> time </Hours1To>
+        <Hours2AnyTime> boolean </Hours2AnyTime>
+        <Hours2Days> DaysCodeType </Hours2Days>
+        <Hours2From> time </Hours2From>
+        <Hours2To> time </Hours2To>
+        <TimeZoneID> string </TimeZoneID>
+      </ContactHoursDetails>
+      <PayPerLeadPhoneNumber> string </PayPerLeadPhoneNumber>
+    </ExtendedSellerContactDetails>
+    <FreeAddedCategory> CategoryType 
+      <CategoryID> string </CategoryID>
+      <CategoryName> string </CategoryName>
+    </FreeAddedCategory>
+    <GetItFast> boolean </GetItFast>
+    <GiftIcon> int </GiftIcon>
+    <GiftServices> GiftServicesCodeType </GiftServices>
+    <!-- ... more GiftServices nodes here ... -->
+    <HitCount> long </HitCount>
+    <HitCounter> HitCounterCodeType </HitCounter>
+    <IntegratedMerchantCreditCardEnabled> boolean </IntegratedMerchantCreditCardEnabled>
+    <InventoryTrackingMethod> InventoryTrackingMethodCodeType </InventoryTrackingMethod>
+    <ItemID> ItemIDType </ItemID>
+    <ItemPolicyViolation> ItemPolicyViolationType 
+      <PolicyID> long </PolicyID>
+      <PolicyText> string </PolicyText>
+    </ItemPolicyViolation>
+    <ItemSpecifics> NameValueListArrayType 
+      <NameValueList> NameValueListType 
+        <Name> string </Name>
+        <Value> string </Value>
+        <!-- ... more Value nodes here ... -->
+      </NameValueList>
+      <!-- ... more NameValueList nodes here ... -->
+    </ItemSpecifics>
+    <ListingCheckoutRedirectPreference> ListingCheckoutRedirectPreferenceType 
+      <ProStoresStoreName> string </ProStoresStoreName>
+      <SellerThirdPartyUsername> string </SellerThirdPartyUsername>
+    </ListingCheckoutRedirectPreference>
+    <ListingDesigner> ListingDesignerType 
+      <LayoutID> int </LayoutID>
+      <OptimalPictureSize> boolean </OptimalPictureSize>
+      <ThemeID> int </ThemeID>
+    </ListingDesigner>
+    <ListingDetails> ListingDetailsType 
+      <Adult> boolean </Adult>
+      <BestOfferAutoAcceptPrice currencyID="CurrencyCodeType"> AmountType (double) </BestOfferAutoAcceptPrice>
+      <BindingAuction> boolean </BindingAuction>
+      <BuyItNowAvailable> boolean </BuyItNowAvailable>
+      <CheckoutEnabled> boolean </CheckoutEnabled>
+      <ConvertedBuyItNowPrice currencyID="CurrencyCodeType"> AmountType (double) </ConvertedBuyItNowPrice>
+      <ConvertedReservePrice currencyID="CurrencyCodeType"> AmountType (double) </ConvertedReservePrice>
+      <ConvertedStartPrice currencyID="CurrencyCodeType"> AmountType (double) </ConvertedStartPrice>
+      <EndTime> dateTime </EndTime>
+      <HasPublicMessages> boolean </HasPublicMessages>
+      <HasReservePrice> boolean </HasReservePrice>
+      <HasUnansweredQuestions> boolean </HasUnansweredQuestions>
+      <MinimumBestOfferMessage> string </MinimumBestOfferMessage>
+      <MinimumBestOfferPrice currencyID="CurrencyCodeType"> AmountType (double) </MinimumBestOfferPrice>
+      <PayPerLeadEnabled> boolean </PayPerLeadEnabled>
+      <RelistedItemID> ItemIDType </RelistedItemID>
+      <SecondChanceOriginalItemID> ItemIDType </SecondChanceOriginalItemID>
+      <StartTime> dateTime </StartTime>
+      <TCROriginalItemID> ItemIDType </TCROriginalItemID>
+      <ViewItemURL> anyURI </ViewItemURL>
+      <ViewItemURLForNaturalSearch> anyURI </ViewItemURLForNaturalSearch>
+    </ListingDetails>
+    <ListingDuration> token </ListingDuration>
+    <ListingEnhancement> ListingEnhancementsCodeType </ListingEnhancement>
+    <!-- ... more ListingEnhancement nodes here ... -->
+    <ListingSubtype2> ListingSubtypeCodeType </ListingSubtype2>
+    <ListingType> ListingTypeCodeType </ListingType>
+    <Location> string </Location>
+    <LocationDefaulted> boolean </LocationDefaulted>
+    <LotSize> int </LotSize>
+    <MechanicalCheckAccepted> boolean </MechanicalCheckAccepted>
+    <MotorsGermanySearchable> boolean </MotorsGermanySearchable>
+    <PaymentAllowedSite> SiteCodeType </PaymentAllowedSite>
+    <!-- ... more PaymentAllowedSite nodes here ... -->
+    <PaymentDetails> PaymentDetailsType 
+      <DaysToFullPayment> int </DaysToFullPayment>
+      <HoursToDeposit> int </HoursToDeposit>
+    </PaymentDetails>
+    <PaymentMethods> BuyerPaymentMethodCodeType </PaymentMethods>
+    <!-- ... more PaymentMethods nodes here ... -->
+    <PayPalEmailAddress> string </PayPalEmailAddress>
+    <PictureDetails> PictureDetailsType 
+      <GalleryDuration> token </GalleryDuration>
+      <GalleryType> GalleryTypeCodeType </GalleryType>
+      <GalleryURL> anyURI </GalleryURL>
+      <PhotoDisplay> PhotoDisplayCodeType </PhotoDisplay>
+      <PictureSource> PictureSourceCodeType </PictureSource>
+      <PictureURL> anyURI </PictureURL>
+      <!-- ... more PictureURL nodes here ... -->
+    </PictureDetails>
+    <PostalCode> string </PostalCode>
+    <PrimaryCategory> CategoryType 
+      <CategoryID> string </CategoryID>
+      <CategoryName> string </CategoryName>
+    </PrimaryCategory>
+    <PrivateListing> boolean </PrivateListing>
+    <ProductListingDetails> ProductListingDetailsType 
+      <Copyright> string </Copyright>
+      <!-- ... more Copyright nodes here ... -->
+      <IncludePrefilledItemInformation> boolean </IncludePrefilledItemInformation>
+      <IncludeStockPhotoURL> boolean </IncludeStockPhotoURL>
+      <ProductID> string </ProductID>
+      <StockPhotoURL> anyURI </StockPhotoURL>
+      <UseStockPhotoURLAsGallery> boolean </UseStockPhotoURLAsGallery>
+    </ProductListingDetails>
+    <ProxyItem> boolean </ProxyItem>
+    <Quantity> int </Quantity>
+    <ReservePrice currencyID="CurrencyCodeType"> AmountType (double) </ReservePrice>
+    <ReturnPolicy> ReturnPolicyType 
+      <Description> string </Description>
+      <EAN> string </EAN>
+      <Refund> string </Refund>
+      <RefundOption> token </RefundOption>
+      <ReturnsAccepted> string </ReturnsAccepted>
+      <ReturnsAcceptedOption> token </ReturnsAcceptedOption>
+      <ReturnsWithin> string </ReturnsWithin>
+      <ReturnsWithinOption> token </ReturnsWithinOption>
+      <ShippingCostPaidBy> string </ShippingCostPaidBy>
+      <ShippingCostPaidByOption> token </ShippingCostPaidByOption>
+      <WarrantyDuration> string </WarrantyDuration>
+      <WarrantyDurationOption> token </WarrantyDurationOption>
+      <WarrantyOffered> string </WarrantyOffered>
+      <WarrantyOfferedOption> token </WarrantyOfferedOption>
+      <WarrantyType> string </WarrantyType>
+      <WarrantyTypeOption> token </WarrantyTypeOption>
+    </ReturnPolicy>
+    <ReviseStatus> ReviseStatusType 
+      <BuyItNowAdded> boolean </BuyItNowAdded>
+      <BuyItNowLowered> boolean </BuyItNowLowered>
+      <ItemRevised> boolean </ItemRevised>
+      <ReserveLowered> boolean </ReserveLowered>
+      <ReserveRemoved> boolean </ReserveRemoved>
+    </ReviseStatus>
+    <SecondaryCategory> CategoryType 
+      <CategoryID> string </CategoryID>
+      <CategoryName> string </CategoryName>
+    </SecondaryCategory>
+    <Seller> UserType 
+      <AboutMePage> boolean </AboutMePage>
+      <eBayGoodStanding> boolean </eBayGoodStanding>
+      <EIASToken> string </EIASToken>
+      <Email> string </Email>
+      <FeedbackPrivate> boolean </FeedbackPrivate>
+      <FeedbackRatingStar> FeedbackRatingStarCodeType </FeedbackRatingStar>
+      <FeedbackScore> int </FeedbackScore>
+      <IDVerified> boolean </IDVerified>
+      <MotorsDealer> boolean </MotorsDealer>
+      <NewUser> boolean </NewUser>
+      <PositiveFeedbackPercent> float </PositiveFeedbackPercent>
+      <RegistrationAddress> AddressType 
+        <CityName> string </CityName>
+        <Country> CountryCodeType </Country>
+        <CountryName> string </CountryName>
+        <FirstName> string </FirstName>
+        <LastName> string </LastName>
+        <Name> string </Name>
+        <Phone> string </Phone>
+        <PostalCode> string </PostalCode>
+        <Street> string </Street>
+        <Street1> string </Street1>
+        <Street2> string </Street2>
+      </RegistrationAddress>
+      <RegistrationDate> dateTime </RegistrationDate>
+      <SellerInfo> SellerType 
+        <AllowPaymentEdit> boolean </AllowPaymentEdit>
+        <CheckoutEnabled> boolean </CheckoutEnabled>
+        <CIPBankAccountStored> boolean </CIPBankAccountStored>
+        <GoodStanding> boolean </GoodStanding>
+        <MerchandizingPref> MerchandizingPrefCodeType </MerchandizingPref>
+        <QualifiesForB2BVAT> boolean </QualifiesForB2BVAT>
+        <SafePaymentExempt> boolean </SafePaymentExempt>
+        <SellerBusinessType> SellerBusinessCodeType </SellerBusinessType>
+        <SellerLevel> SellerLevelCodeType </SellerLevel>
+        <StoreOwner> boolean </StoreOwner>
+        <StoreURL> anyURI </StoreURL>
+      </SellerInfo>
+      <Site> SiteCodeType </Site>
+      <Status> UserStatusCodeType </Status>
+      <UserID> UserIDType </UserID>
+      <UserIDChanged> boolean </UserIDChanged>
+      <UserIDLastChanged> dateTime </UserIDLastChanged>
+      <VATStatus> VATStatusCodeType </VATStatus>
+    </Seller>
+    <SellerContactDetails> AddressType 
+      <CompanyName> string </CompanyName>
+      <County> string </County>
+      <FirstName> string </FirstName>
+      <LastName> string </LastName>
+      <Phone2AreaOrCityCode> string </Phone2AreaOrCityCode>
+      <Phone2CountryCode> CountryCodeType </Phone2CountryCode>
+      <Phone2CountryPrefix> string </Phone2CountryPrefix>
+      <Phone2LocalNumber> string </Phone2LocalNumber>
+      <PhoneAreaOrCityCode> string </PhoneAreaOrCityCode>
+      <PhoneCountryCode> CountryCodeType </PhoneCountryCode>
+      <PhoneCountryPrefix> string </PhoneCountryPrefix>
+      <PhoneLocalNumber> string </PhoneLocalNumber>
+      <Street1> string </Street1>
+      <Street2> string </Street2>
+    </SellerContactDetails>
+    <SellerVacationNote> string </SellerVacationNote>
+    <SellingStatus> SellingStatusType 
+      <AdminEnded> boolean </AdminEnded>
+      <BidCount> int </BidCount>
+      <BidIncrement currencyID="CurrencyCodeType"> AmountType (double) </BidIncrement>
+      <ConvertedCurrentPrice currencyID="CurrencyCodeType"> AmountType (double) </ConvertedCurrentPrice>
+      <CurrentPrice currencyID="CurrencyCodeType"> AmountType (double) </CurrentPrice>
+      <HighBidder> UserType 
+        <AboutMePage> boolean </AboutMePage>
+        <BuyerInfo> BuyerType 
+          <ShippingAddress> AddressType 
+            <Country> CountryCodeType </Country>
+            <FirstName> string </FirstName>
+            <LastName> string </LastName>
+            <PostalCode> string </PostalCode>
+          </ShippingAddress>
+        </BuyerInfo>
+        <eBayGoodStanding> boolean </eBayGoodStanding>
+        <EIASToken> string </EIASToken>
+        <Email> string </Email>
+        <FeedbackPrivate> boolean </FeedbackPrivate>
+        <FeedbackRatingStar> FeedbackRatingStarCodeType </FeedbackRatingStar>
+        <FeedbackScore> int </FeedbackScore>
+        <IDVerified> boolean </IDVerified>
+        <NewUser> boolean </NewUser>
+        <PositiveFeedbackPercent> float </PositiveFeedbackPercent>
+        <RegistrationAddress> AddressType 
+          <CityName> string </CityName>
+          <Country> CountryCodeType </Country>
+          <CountryName> string </CountryName>
+          <FirstName> string </FirstName>
+          <LastName> string </LastName>
+          <Name> string </Name>
+          <Phone> string </Phone>
+          <PostalCode> string </PostalCode>
+          <Street> string </Street>
+          <Street1> string </Street1>
+          <Street2> string </Street2>
+        </RegistrationAddress>
+        <RegistrationDate> dateTime </RegistrationDate>
+        <Site> SiteCodeType </Site>
+        <Status> UserStatusCodeType </Status>
+        <UserAnonymized> boolean </UserAnonymized>
+        <UserID> UserIDType </UserID>
+        <UserIDChanged> boolean </UserIDChanged>
+        <UserIDLastChanged> dateTime </UserIDLastChanged>
+        <VATStatus> VATStatusCodeType </VATStatus>
+      </HighBidder>
+      <LeadCount> int </LeadCount>
+      <ListingStatus> ListingStatusCodeType </ListingStatus>
+      <MinimumToBid currencyID="CurrencyCodeType"> AmountType (double) </MinimumToBid>
+      <PromotionalSaleDetails> PromotionalSaleDetailsType 
+        <EndTime> dateTime </EndTime>
+        <OriginalPrice currencyID="CurrencyCodeType"> AmountType (double) </OriginalPrice>
+        <StartTime> dateTime </StartTime>
+      </PromotionalSaleDetails>
+      <QuantitySold> int </QuantitySold>
+      <ReserveMet> boolean </ReserveMet>
+      <SecondChanceEligible> boolean </SecondChanceEligible>
+    </SellingStatus>
+    <ShippingDetails> ShippingDetailsType 
+      <AllowPaymentEdit> boolean </AllowPaymentEdit>
+      <ApplyShippingDiscount> boolean </ApplyShippingDiscount>
+      <CalculatedShippingDiscount> CalculatedShippingDiscountType 
+        <DiscountName> DiscountNameCodeType </DiscountName>
+        <DiscountProfile> DiscountProfileType 
+          <DiscountProfileID> string </DiscountProfileID>
+          <DiscountProfileName> string </DiscountProfileName>
+          <MappedDiscountProfileID> string </MappedDiscountProfileID>
+          <WeightOff unit="token" measurementSystem="MeasurementSystemCodeType"> MeasureType (decimal) </WeightOff>
+        </DiscountProfile>
+        <!-- ... more DiscountProfile nodes here ... -->
+      </CalculatedShippingDiscount>
+      <CalculatedShippingRate> CalculatedShippingRateType 
+        <InternationalPackagingHandlingCosts currencyID="CurrencyCodeType"> AmountType (double) </InternationalPackagingHandlingCosts>
+        <OriginatingPostalCode> string </OriginatingPostalCode>
+        <PackageDepth unit="token" measurementSystem="MeasurementSystemCodeType"> MeasureType (decimal) </PackageDepth>
+        <PackageLength unit="token" measurementSystem="MeasurementSystemCodeType"> MeasureType (decimal) </PackageLength>
+        <PackageWidth unit="token" measurementSystem="MeasurementSystemCodeType"> MeasureType (decimal) </PackageWidth>
+        <PackagingHandlingCosts currencyID="CurrencyCodeType"> AmountType (double) </PackagingHandlingCosts>
+        <ShippingIrregular> boolean </ShippingIrregular>
+        <ShippingPackage> ShippingPackageCodeType </ShippingPackage>
+        <WeightMajor unit="token" measurementSystem="MeasurementSystemCodeType"> MeasureType (decimal) </WeightMajor>
+        <WeightMinor unit="token" measurementSystem="MeasurementSystemCodeType"> MeasureType (decimal) </WeightMinor>
+      </CalculatedShippingRate>
+      <CODCost currencyID="CurrencyCodeType"> AmountType (double) </CODCost>
+      <FlatShippingDiscount> FlatShippingDiscountType 
+        <DiscountName> DiscountNameCodeType </DiscountName>
+        <DiscountProfile> DiscountProfileType 
+          <DiscountProfileID> string </DiscountProfileID>
+          <DiscountProfileName> string </DiscountProfileName>
+          <EachAdditionalAmount currencyID="CurrencyCodeType"> AmountType (double) </EachAdditionalAmount>
+          <EachAdditionalAmountOff currencyID="CurrencyCodeType"> AmountType (double) </EachAdditionalAmountOff>
+          <EachAdditionalPercentOff> float </EachAdditionalPercentOff>
+        </DiscountProfile>
+        <!-- ... more DiscountProfile nodes here ... -->
+      </FlatShippingDiscount>
+      <GetItFast> boolean </GetItFast>
+      <InsuranceDetails> InsuranceDetailsType 
+        <InsuranceFee currencyID="CurrencyCodeType"> AmountType (double) </InsuranceFee>
+        <InsuranceOption> InsuranceOptionCodeType </InsuranceOption>
+      </InsuranceDetails>
+      <InsuranceFee currencyID="CurrencyCodeType"> AmountType (double) </InsuranceFee>
+      <InsuranceOption> InsuranceOptionCodeType </InsuranceOption>
+      <InternationalCalculatedShippingDiscount> CalculatedShippingDiscountType 
+        <DiscountName> DiscountNameCodeType </DiscountName>
+        <DiscountProfile> DiscountProfileType 
+          <DiscountProfileID> string </DiscountProfileID>
+          <DiscountProfileName> string </DiscountProfileName>
+          <MappedDiscountProfileID> string </MappedDiscountProfileID>
+          <WeightOff unit="token" measurementSystem="MeasurementSystemCodeType"> MeasureType (decimal) </WeightOff>
+        </DiscountProfile>
+        <!-- ... more DiscountProfile nodes here ... -->
+      </InternationalCalculatedShippingDiscount>
+      <InternationalFlatShippingDiscount> FlatShippingDiscountType 
+        <DiscountName> DiscountNameCodeType </DiscountName>
+        <DiscountProfile> DiscountProfileType 
+          <DiscountProfileID> string </DiscountProfileID>
+          <DiscountProfileName> string </DiscountProfileName>
+          <EachAdditionalAmount currencyID="CurrencyCodeType"> AmountType (double) </EachAdditionalAmount>
+          <EachAdditionalAmountOff currencyID="CurrencyCodeType"> AmountType (double) </EachAdditionalAmountOff>
+          <EachAdditionalPercentOff> float </EachAdditionalPercentOff>
+        </DiscountProfile>
+        <!-- ... more DiscountProfile nodes here ... -->
+      </InternationalFlatShippingDiscount>
+      <InternationalInsuranceDetails> InsuranceDetailsType 
+        <InsuranceFee currencyID="CurrencyCodeType"> AmountType (double) </InsuranceFee>
+        <InsuranceOption> InsuranceOptionCodeType </InsuranceOption>
+      </InternationalInsuranceDetails>
+      <InternationalPromotionalShippingDiscount> boolean </InternationalPromotionalShippingDiscount>
+      <InternationalShippingDiscountProfileID> string </InternationalShippingDiscountProfileID>
+      <InternationalShippingServiceOption> InternationalShippingServiceOptionsType 
+        <ShippingService> token </ShippingService>
+        <ShippingServiceAdditionalCost currencyID="CurrencyCodeType"> AmountType (double) </ShippingServiceAdditionalCost>
+        <ShippingServiceCost currencyID="CurrencyCodeType"> AmountType (double) </ShippingServiceCost>
+        <ShippingServicePriority> int </ShippingServicePriority>
+        <ShipToLocation> string </ShipToLocation>
+        <!-- ... more ShipToLocation nodes here ... -->
+      </InternationalShippingServiceOption>
+      <!-- ... more InternationalShippingServiceOption nodes here ... -->
+      <PaymentInstructions> string </PaymentInstructions>
+      <PromotionalShippingDiscount> boolean </PromotionalShippingDiscount>
+      <PromotionalShippingDiscountDetails> PromotionalShippingDiscountDetailsType 
+        <DiscountName> DiscountNameCodeType </DiscountName>
+        <ItemCount> int </ItemCount>
+        <OrderAmount currencyID="CurrencyCodeType"> AmountType (double) </OrderAmount>
+        <ShippingCost currencyID="CurrencyCodeType"> AmountType (double) </ShippingCost>
+      </PromotionalShippingDiscountDetails>
+      <SalesTax> SalesTaxType 
+        <SalesTaxPercent> float </SalesTaxPercent>
+        <SalesTaxState> string </SalesTaxState>
+        <ShippingIncludedInTax> boolean </ShippingIncludedInTax>
+      </SalesTax>
+      <ShippingDiscountProfileID> string </ShippingDiscountProfileID>
+      <ShippingServiceOptions> ShippingServiceOptionsType 
+        <ExpeditedService> boolean </ExpeditedService>
+        <FreeShipping> boolean </FreeShipping>
+        <ShippingService> token </ShippingService>
+        <ShippingServiceAdditionalCost currencyID="CurrencyCodeType"> AmountType (double) </ShippingServiceAdditionalCost>
+        <ShippingServiceCost currencyID="CurrencyCodeType"> AmountType (double) </ShippingServiceCost>
+        <ShippingServicePriority> int </ShippingServicePriority>
+        <ShippingSurcharge currencyID="CurrencyCodeType"> AmountType (double) </ShippingSurcharge>
+        <ShippingTimeMax> int </ShippingTimeMax>
+        <ShippingTimeMin> int </ShippingTimeMin>
+      </ShippingServiceOptions>
+      <!-- ... more ShippingServiceOptions nodes here ... -->
+      <ShippingType> ShippingTypeCodeType </ShippingType>
+      <TaxTable> TaxTableType 
+        <TaxJurisdiction> TaxJurisdictionType 
+          <JurisdictionID> string </JurisdictionID>
+          <SalesTaxPercent> float </SalesTaxPercent>
+          <ShippingIncludedInTax> boolean </ShippingIncludedInTax>
+        </TaxJurisdiction>
+        <!-- ... more TaxJurisdiction nodes here ... -->
+      </TaxTable>
+      <ThirdPartyCheckout> boolean </ThirdPartyCheckout>
+    </ShippingDetails>
+    <ShippingTermsInDescription> boolean </ShippingTermsInDescription>
+    <ShipToLocations> string </ShipToLocations>
+    <!-- ... more ShipToLocations nodes here ... -->
+    <Site> SiteCodeType </Site>
+    <SKU> SKUType </SKU>
+    <SkypeContactOption> SkypeContactOptionCodeType </SkypeContactOption>
+    <!-- ... more SkypeContactOption nodes here ... -->
+    <SkypeEnabled> boolean </SkypeEnabled>
+    <SkypeID> string </SkypeID>
+    <StartPrice currencyID="CurrencyCodeType"> AmountType (double) </StartPrice>
+    <Storefront> StorefrontType 
+      <StoreCategory2ID> long </StoreCategory2ID>
+      <StoreCategoryID> long </StoreCategoryID>
+      <StoreURL> anyURI </StoreURL>
+    </Storefront>
+    <SubTitle> string </SubTitle>
+    <ThirdPartyCheckoutIntegration> boolean </ThirdPartyCheckoutIntegration>
+    <TimeLeft> duration </TimeLeft>
+    <Title> string </Title>
+    <UUID> UUIDType </UUID>
+    <VATDetails> VATDetailsType 
+      <BusinessSeller> boolean </BusinessSeller>
+      <RestrictedToBusiness> boolean </RestrictedToBusiness>
+      <VATID> string </VATID>
+      <VATPercent> float </VATPercent>
+      <VATSite> string </VATSite>
+    </VATDetails>
+    <WatchCount> long </WatchCount>
+  </Item>
+</GetItemResponse>

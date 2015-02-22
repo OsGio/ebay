@@ -1,0 +1,10 @@
+    1  yum install -y httpd mysql mysqld mysql-server php php-mbstring php-pear php-mcrypt php-mysqli
+    2  service httpd restart
+    3  chkconfig httpd on
+    4  service mysqld restart
+    5  cd /vagrant
+    6  ls
+    7  rm -rf /var/www/html
+    8  ln -fs /vagrant /var/www/html
+    9  history
+   10  history > command_ebay.txt

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindItemsAdvancedResponse xmlns="urn:ebay:apis:eBLBaseComponents">
+   <Timestamp>2009-03-13T23:47:50.170Z</Timestamp>
+   <Ack>Success</Ack>
+   <Build>e607_core_Bundled_8148679_R1</Build>
+   <Version>607</Version>
+   <SearchResult>
+    <ItemArray>
+     <Item>
+      <ItemID>220279512923</ItemID>
+      <EndTime>2009-04-07T17:55:12.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/HP-3852A-Data-Acquisition-Control-Unit-w-plug-ins_W0QQitemZ220279512923QQcategoryZ25402QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs3.ebaystatic.com/pict/2202795129238080_7.jpg</GalleryURL>
+      <PrimaryCategoryID>25402</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Electrical &amp; Test Equipment:Test Equipment:Data Acquisition &amp; Recorders:Data Acquisition Systems</PrimaryCategoryName>
+      <BidCount>1</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">600.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P24DT18H7M22S</TimeLeft>
+      <Title>HP 3852A Data Acquisition Control Unit w/plug ins</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>370172847844</ItemID>
+      <EndTime>2009-04-12T22:09:01.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/LITHIUM-BATTERY-3-6-VOLT-NEW-1200-MA-AXIAL-LEADS_W0QQitemZ370172847844QQcategoryZ13731QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs2.ebaystatic.com/pict/3701728478448080_1.jpg</GalleryURL>
+      <PrimaryCategoryID>13731</PrimaryCategoryID>
+      <PrimaryCategoryName>Collectibles:Casino:Slots:Parts &amp; Accessories</PrimaryCategoryName>
+      <BidCount>0</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">20.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P29DT22H21M11S</TimeLeft>
+      <Title>LITHIUM BATTERY 3.6 VOLT NEW 1200 MA AXIAL LEADS</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>220255454245</ItemID>
+      <EndTime>2009-04-05T16:47:41.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/3M-SCOTCHLITE-GLASS-MICROSPHERES_W0QQitemZ220255454245QQcategoryZ31485QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs2.ebaystatic.com/pict/2202554542458080_9.jpg</GalleryURL>
+      <PrimaryCategoryID>31485</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Industrial Supply &amp; MRO:Wholesale Lots</PrimaryCategoryName>
+      <BidCount>27</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">7.5</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P22DT16H59M51S</TimeLeft>
+      <Title>3M SCOTCHLITE GLASS MICROSPHERES</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>320260212295</ItemID>
+      <EndTime>2009-04-01T16:24:20.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/IDEAL-46-921-HEAT-GUN-REPLACEMENT-NOZZLE-NEW-IN-BOX_W0QQitemZ320260212295QQcategoryZ26229QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs2.ebaystatic.com/pict/3202602122958080_10.jpg</GalleryURL>
+      <PrimaryCategoryID>26229</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Industrial Supply &amp; MRO:Professional Tools:Other</PrimaryCategoryName>
+      <BidCount>6</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">10.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P18DT16H36M30S</TimeLeft>
+      <Title>IDEAL 46-921 HEAT GUN REPLACEMENT NOZZLE NEW IN BOX</Title>
+      <ShippingCostSummary>
+       <ShippingServiceCost currencyID="USD">5.0</ShippingServiceCost>
+       <ShippingType>FlatDomesticCalculatedInternational</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>220279511648</ItemID>
+      <EndTime>2009-04-07T17:52:32.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/Lambda-LT-863-GPIB-Power-supply-36vdc-115A_W0QQitemZ220279511648QQcategoryZ58288QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs3.ebaystatic.com/pict/2202795116488080_7.jpg</GalleryURL>
+      <PrimaryCategoryID>58288</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Electrical &amp; Test Equipment:Test Equipment:Power Supplies:DC Power Supplies</PrimaryCategoryName>
+      <BidCount>1</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">400.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P24DT18H4M42S</TimeLeft>
+      <Title>Lambda LT-863 GPIB Power supply 36vdc 115A</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>320234627155</ItemID>
+      <EndTime>2009-03-26T23:25:12.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/SIMPLEX-GRINNELL-REMOTE-ALARM-TEST-W-KEY-2098-9806-new_W0QQitemZ320234627155QQcategoryZ57018QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs2.ebaystatic.com/pict/3202346271558080_12.jpg</GalleryURL>
+      <PrimaryCategoryID>57018</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Industrial Supply &amp; MRO:Safety &amp; Security:Industrial Fire Protection:Fire Alarms</PrimaryCategoryName>
+      <BidCount>2</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">10.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P12DT23H37M22S</TimeLeft>
+      <Title>SIMPLEX GRINNELL REMOTE ALARM TEST W/ KEY 2098-9806 new</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>370172845608</ItemID>
+      <EndTime>2009-04-12T22:04:58.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/SCHOTT-FOSTEC-FIBER-OPTIC-DUAL-BUNDLE-40-A08550-NEW_W0QQitemZ370172845608QQcategoryZ11813QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs1.ebaystatic.com/pict/3701728456088080_1.jpg</GalleryURL>
+      <PrimaryCategoryID>11813</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Healthcare, Lab &amp; Life Science:Lab Equipment:Microscope Parts &amp; Accessories</PrimaryCategoryName>
+      <BidCount>0</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">150.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P29DT22H17M8S</TimeLeft>
+      <Title>SCHOTT FOSTEC FIBER OPTIC DUAL BUNDLE 40" A08550 NEW</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>220145345286</ItemID>
+      <EndTime>2009-03-23T00:03:03.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/SCHOTT-A08550-FIBER-OPTIC-DUAL-ILLUMINATOR-SPOT-LENS_W0QQitemZ220145345286QQcategoryZ11813QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs1.ebaystatic.com/pict/2201453452868080_14.jpg</GalleryURL>
+      <PrimaryCategoryID>11813</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Healthcare, Lab &amp; Life Science:Lab Equipment:Microscope Parts &amp; Accessories</PrimaryCategoryName>
+      <BidCount>1</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">200.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P9DT15M13S</TimeLeft>
+      <Title>SCHOTT A08550 FIBER OPTIC DUAL ILLUMINATOR + SPOT LENS</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>220130464584</ItemID>
+      <EndTime>2009-04-02T20:41:05.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/IDEC-IZUMI-100W-POWER-SUPPLY-PS5R-E24-PS5RE24_W0QQitemZ220130464584QQcategoryZ97184QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs1.ebaystatic.com/pict/2201304645848080_14.jpg</GalleryURL>
+      <PrimaryCategoryID>97184</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Electrical &amp; Test Equipment:Industrial Automation, Control:Control Systems and PLCs</PrimaryCategoryName>
+      <BidCount>1</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">80.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P19DT20H53M15S</TimeLeft>
+      <Title>IDEC IZUMI 100W POWER SUPPLY PS5R-E24 PS5RE24</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>370112938679</ItemID>
+      <EndTime>2009-04-12T22:27:22.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/Hewlett-Packard-6653A-GPIB-dc-power-supply-35V-15A_W0QQitemZ370112938679QQcategoryZ58288QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs3.ebaystatic.com/pict/3701129386798080_5.jpg</GalleryURL>
+      <PrimaryCategoryID>58288</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Electrical &amp; Test Equipment:Test Equipment:Power Supplies:DC Power Supplies</PrimaryCategoryName>
+      <BidCount>0</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">900.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P29DT22H39M32S</TimeLeft>
+      <Title>Hewlett Packard 6653A GPIB dc power supply 35V 15A</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>370172844036</ItemID>
+      <EndTime>2009-04-12T21:56:49.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/Banner-light-screen-emitter-ls10e-and-reciever-ls10r_W0QQitemZ370172844036QQcategoryZ67003QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs1.ebaystatic.com/pict/3701728440368080_1.jpg</GalleryURL>
+      <PrimaryCategoryID>67003</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Electrical &amp; Test Equipment:Industrial Automation, Control:Sensors</PrimaryCategoryName>
+      <BidCount>0</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">50.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P29DT22H8M59S</TimeLeft>
+      <Title>Banner light screen emitter ls10e and reciever ls10r</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>370172841743</ItemID>
+      <EndTime>2009-04-12T21:52:50.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/Baumer-Electric-ch-8500_W0QQitemZ370172841743QQcategoryZ67003QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs3.ebaystatic.com/pict/3701728417438080_1.jpg</GalleryURL>
+      <PrimaryCategoryID>67003</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Electrical &amp; Test Equipment:Industrial Automation, Control:Sensors</PrimaryCategoryName>
+      <BidCount>0</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">10.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P29DT22H5M</TimeLeft>
+      <Title>Baumer Electric ch-8500</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>220377576294</ItemID>
+      <EndTime>2009-04-12T21:52:01.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/Cathode-Ray-Tube-type-h1397ap1_W0QQitemZ220377576294QQcategoryZ25414QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs1.ebaystatic.com/pict/2203775762948080_1.jpg</GalleryURL>
+      <PrimaryCategoryID>25414</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Electrical &amp; Test Equipment:Test Equipment:Parts, Accessories &amp; Plug-Ins:Other</PrimaryCategoryName>
+      <BidCount>0</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">100.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P29DT22H4M11S</TimeLeft>
+      <Title>Cathode Ray Tube type h1397ap1</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>370172840461</ItemID>
+      <EndTime>2009-04-12T21:50:35.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/Omron-3ev3-t81-d-photoelectric-sensor-lot-of-9_W0QQitemZ370172840461QQcategoryZ67003QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs2.ebaystatic.com/pict/3701728404618080_1.jpg</GalleryURL>
+      <PrimaryCategoryID>67003</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Electrical &amp; Test Equipment:Industrial Automation, Control:Sensors</PrimaryCategoryName>
+      <BidCount>0</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">40.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P29DT22H2M45S</TimeLeft>
+      <Title>Omron 3ev3-t81-d  photoelectric sensor lot of 9</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>220377574687</ItemID>
+      <EndTime>2009-04-12T21:48:20.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/RC-Limit-Switch-rcl-301_W0QQitemZ220377574687QQcategoryZ55834QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs2.ebaystatic.com/pict/2203775746878080_1.jpg</GalleryURL>
+      <PrimaryCategoryID>55834</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Electrical &amp; Test Equipment:Industrial Automation, Control:Switches for Automation</PrimaryCategoryName>
+      <BidCount>0</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">50.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P29DT22H30S</TimeLeft>
+      <Title>RC Limit Switch rcl-301.</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>220377572991</ItemID>
+      <EndTime>2009-04-12T21:44:35.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/Welch-Allyn-digital-cmm-Scanner-622102-10-mil_W0QQitemZ220377572991QQcategoryZ67003QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs1.ebaystatic.com/pict/2203775729918080_1.jpg</GalleryURL>
+      <PrimaryCategoryID>67003</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Electrical &amp; Test Equipment:Industrial Automation, Control:Sensors</PrimaryCategoryName>
+      <BidCount>0</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">10.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P29DT21H56M45S</TimeLeft>
+      <Title>Welch Allyn digital cmm Scanner 622102 10 mil.</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>370172834151</ItemID>
+      <EndTime>2009-04-12T21:44:29.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/Mitutoyo-serial-extension-cable-09aab674c_W0QQitemZ370172834151QQcategoryZ12581QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs1.ebaystatic.com/pict/3701728341518080_1.jpg</GalleryURL>
+      <PrimaryCategoryID>12581</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Manufacturing &amp; Metalworking:Metalworking Tooling:Inspection &amp; Measurement:Other</PrimaryCategoryName>
+      <BidCount>0</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">25.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P29DT21H56M39S</TimeLeft>
+      <Title>Mitutoyo serial extension cable  09aab674c</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>220225295103</ItemID>
+      <EndTime>2009-04-12T19:44:47.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/HEATHKIT-DC-1-DECADE-CONDENSER-CAPACITOR-SUBSTITUTION_W0QQitemZ220225295103QQcategoryZ25399QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs1.ebaystatic.com/pict/2202252951038080_12.jpg</GalleryURL>
+      <PrimaryCategoryID>25399</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Electrical &amp; Test Equipment:Test Equipment:Calibrators</PrimaryCategoryName>
+      <BidCount>0</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">50.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P29DT19H56M57S</TimeLeft>
+      <Title>HEATHKIT DC-1 DECADE CONDENSER CAPACITOR SUBSTITUTION</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>320241294252</ItemID>
+      <EndTime>2009-04-12T19:44:24.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/GRAYHILL-Rotary-Switch-51CBP30-01B05N_W0QQitemZ320241294252QQcategoryZ58168QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs1.ebaystatic.com/pict/3202412942528080_12.jpg</GalleryURL>
+      <PrimaryCategoryID>58168</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Electrical &amp; Test Equipment:Connectors, Switches &amp; Wire:Switches:Rotary</PrimaryCategoryName>
+      <BidCount>0</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">10.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P29DT19H56M34S</TimeLeft>
+      <Title>GRAYHILL — Rotary Switch 51CBP30-01B05N</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+     <Item>
+      <ItemID>220310516081</ItemID>
+      <EndTime>2009-04-10T17:02:04.000Z</EndTime>
+      <ViewItemURLForNaturalSearch>http://cgi.ebay.com/CRESCENT-DIAMOND-UTICA-529-10-MILITARY-CONNECTOR-PLIERS_W0QQitemZ220310516081QQcategoryZ31483QQcmdZViewItem</ViewItemURLForNaturalSearch>
+      <ListingType>StoresFixedPrice</ListingType>
+      <GalleryURL>http://thumbs3.ebaystatic.com/pict/2203105160818080_5.jpg</GalleryURL>
+      <PrimaryCategoryID>31483</PrimaryCategoryID>
+      <PrimaryCategoryName>Business &amp; Industrial:Industrial Supply &amp; MRO:Professional Tools:Hand Tools:Other</PrimaryCategoryName>
+      <BidCount>7</BidCount>
+      <ConvertedCurrentPrice currencyID="USD">10.0</ConvertedCurrentPrice>
+      <ListingStatus>Active</ListingStatus>
+      <TimeLeft>P27DT17H14M14S</TimeLeft>
+      <Title>CRESCENT DIAMOND UTICA 529-10 MILITARY CONNECTOR PLIERS</Title>
+      <ShippingCostSummary>
+       <ShippingType>Calculated</ShippingType>
+      </ShippingCostSummary>
+     </Item>
+    </ItemArray>
+   </SearchResult>
+   <PageNumber>1</PageNumber>
+   <TotalPages>42</TotalPages>
+   <TotalItems>833</TotalItems>
+   <ItemSearchURL>http://search.ebay.com/ws/search/SaleSearch?DemandData=1&amp;fobfmt=1&amp;fsop=32&amp;saobfmts=sifonly&amp;sascs=11&amp;sasel=swliquidators&amp;sasif=1&amp;sass=swliquidators</ItemSearchURL>
+  </FindItemsAdvancedResponse>
