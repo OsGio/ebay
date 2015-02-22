@@ -19,31 +19,31 @@ if ($db->NumRows($rc) > 0) {
 
 if (isset($_GET["exec"]) && $_GET["exec"] == "1") {
 
-	$sql = "delete from  `ebay_result_tbl` where username = '".$db->esc($username)."'";	
+	$sql = "delete from  `ebay_result_tbl` where username = '".$db->esc($username)."'";
 	$rc = $db -> Exec($sql);
 	if(!rc) {
 		$message = 'Invalid query: ' . mysql_error() . "\n";
 		$message .= 'Whole query: ' . $sql;
 		die($message);
 	}
-	
+
 	//exec("php /home/wasab/www/eBay_converter/convert_rakuten.php $username");
 	exec("nohup /usr/bin/php /var/www/html/ebay/convert_rakuten.php $username > /dev/null 2>&1 &");
 	$convert_message = '商品データをeBay向けデータへ変換しています。。。';
 	$finish_message = 'データの変換が完了しました！';
-	
+
 } elseif (isset($_GET["exec"]) && $_GET["exec"] == "3") {
-	
+
 	//exec("php /home/wasab/www/eBay_converter/ebay_addItem.php $username");
 	exec("nohup /usr/bin/php /var/www/html/ebay/ebay_addItem.php $username > /dev/null 2>&1 &");
 	$convert_message = 'eBayへ商品を出品しています。。。';
-	$finish_message = 'eBayへの出品が完了しました！';	
+	$finish_message = 'eBayへの出品が完了しました！';
 }
 ?>
 
 <script type="text/javascript">
     var timer_process;
-    
+
 	<?php if (isset($_GET["exec"])) { ?>
     $(function() {
         timer_process = setInterval("get_batch_progress()", 1000);
@@ -58,13 +58,14 @@ if (isset($_GET["exec"]) && $_GET["exec"] == "1") {
                     console.log(data);
                     if (data == 'true') {
                         clearInterval(timer_process);
-                        alert('<?php echo $finish_message; ?>(変換・実行ログ画面に移動します)');
+                        // alert('<?php //echo $finish_message; ?>(変換・実行ログ画面に移動します)');
+							alert('変換・実行ログ画面に移動します');
 					location.href = './log.php';
                     }
             }
         });
     }
-    
+
 	function doChange(){
 		if(confirm("データ変換がバックグランドで実行され、変換完了時登録メールに送信致します。実行してよろしいですか？")) {
 			document.frm.action = "convert.php?exec=1";
@@ -126,9 +127,9 @@ if (isset($_GET["exec"]) && $_GET["exec"] == "1") {
 		<img src="img/loading.gif"><br />
 		<?php echo_h($convert_message); ?>
 	</div>
-<?php } ?>	
-	
-	
+<?php } ?>
+
+
 
 <div align="center" style="margin:20px 0;">
 <img src="img/arrow3.gif" />
@@ -193,10 +194,10 @@ if (isset($_GET["exec"]) && $_GET["exec"] == "1") {
 </div>
 
 				</div>
-				
+
 				<div class="remodal" data-remodal-id="ebay-set">
 				<iframe width="560" height="315" src="./ebayAuth1.php" frameborder="0" allowfullscreen></iframe>
-				</div>				
+				</div>
 			<?php }
 			$db -> close();
 			?>

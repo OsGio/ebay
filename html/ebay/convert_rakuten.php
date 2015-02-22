@@ -21,14 +21,14 @@ if ($obj_user = $db -> fetch_object($user_rc)) {
 	$trans = new SC_transAPI('203916a788aa313171d9c22e85b82cf9', $obj_user->trans_api_key, $obj_user->trans_api_secret_key);
 }
 
-
+var_dump($user_name);exit;
 if ($username) {
-	
+
 	//変換
 	$sql = "select * from  `setting_tbl` where username = '".$db->esc($username)."'";
 	$setting_rc = $db -> Exec($sql);
 	$objset = $db -> fetch_object($setting_rc);
-	
+
 	$PayPal_Accepted = 1;
 	$PayPal_Email_Address = "";
 	$location = "";
@@ -43,7 +43,7 @@ if ($username) {
 		$Returns_Accepted_Option = $objset -> return_accept;
 		$format = $objset -> format;
 	}
-	
+
 	$sql = "delete from  `log_tbl` where username = '".$db->esc($username)."'";
 	$rc = $db -> Exec($sql);
 	if(!rc) {
@@ -57,7 +57,7 @@ if ($username) {
     // 変換
     $new_id = 1;
     $errorMsg = "";
-    
+
     $rate="100";
     $action="Add";
 	$Condition_ID="3000";
@@ -90,7 +90,7 @@ if ($username) {
 	$use_pc_promote = 1;
 	$postage  = 0;
 
-	
+
 	if($db -> NumRows($setting_rc) > 0) {
 
 		$rate=$objset -> rate;
@@ -125,15 +125,15 @@ if ($username) {
 		$use_pc_promote = $objset -> use_pc_promote;
 		$postage  = $objset -> postage;
 	}
-	
-	
+
+
 	//コンディションテーブルを取得
 	$condition_mst = array();
 	$cond_sql = "select * from  `condition_mst` where username = '".$db->esc($username)."'";
 	$condition_res = $db -> Exec($cond_sql);
 	if (!$db->NumRows($condition_res)) {
 		$cond_sql = "select * from  `condition_mst` where username = 'wasabi_admin'";
-		$condition_res = $db -> Exec($cond_sql);		
+		$condition_res = $db -> Exec($cond_sql);
 	}
 	while ($cond_obj = $db -> fetch_object($condition_res)) {
 		$condition_mst[] = array(
@@ -143,7 +143,7 @@ if ($username) {
 		);
 	}
 //	var_dump($condition_mst);
-	
+
 
 	//文中の文字列を正規表現に変換するマスタ
 	$regex_list = array(
@@ -156,8 +156,8 @@ if ($username) {
 		array('【全角文字】', '[ぁ-んァ-ヶー一-龠 ]+')
 	);
 //	var_dump($regex_list);
-	
-	
+
+
 	//キーワード・英訳辞書を取得
 	$sql = "SELECT *, CASE change_col WHEN 0 THEN '0' ELSE '1' END as chg, CASE username WHEN 'wasabi_admin' THEN '0' ELSE '1' END as usr FROM string_mst_tbl WHERE (username = '".$db->esc($username)."' OR username = 'wasabi_admin') ORDER BY chg DESC, usr DESC, no ASC";
 	$tmp_string_mst = $db->Exec($sql);
@@ -173,27 +173,27 @@ if ($username) {
 			} else {
 				$obj->before_str = '/'.$obj->before_str.'/u';
 			}
-			
+
 		} else if ($obj->action_type == '範囲置換') {
 			$split_str = mb_split('<<split>>', $obj->before_str);
-			
+
 			$obj->start_str = preg_quote($split_str[0], '/');
 			foreach ($regex_list as $regex) {
 				$obj->start_str = preg_replace('/'.$regex[0].'/', $regex[1], $obj->start_str);
 			}
-			
+
 			$obj->end_str = preg_quote($split_str[1], '/');
 			foreach ($regex_list as $regex) {
 				$obj->end_str = preg_replace('/'.$regex[0].'/', $regex[1], $obj->end_str);
 			}
 		}
-		
+
 		$string_mst[] = (array)$obj;
 	}
 //	var_dump($string_mst);
-	
 
-	
+
+
 	while ($obj = $db -> fetch_object($rc)) {
 
 		//キーワード・英訳辞書の変換を実行
@@ -210,14 +210,14 @@ if ($username) {
 		$Title = trim(strip_tags($trans->trans($obj -> product_name, 'ja', 'en')));
 		$Title = str_replace("'","''",$Title);
 		$Title = preg_replace('/[￡％＃＆＊＠§☆★○●◎◇◆□■△▲▽▼、。，．・：；？！゛゜´｀¨＾￣＿ヽヾゝゞ〃仝々〆〇ー―‐／＼～∥｜…‥‘’“”（）〔〕［］｛｝〈〉《》「」『』【】＋－±×÷＝≠＜＞≦≧∞∴♂♀°′″℃￥＄￠※〒→←↑↓〓∈∋⊆⊇⊂⊃∪∩∧∨￢⇒⇔∀∃∠⊥⌒∂∇≡≒≪≫√∽∝∵∫∬Å‰♯♭♪†‡¶◯ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя─│┌┐┘└├┬┤┴┼━┃┏┓┛┗┣┳┫┻╋┠┯┨┷┿┝┰┥┸╂①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩ�㍉㌔㌢㍍㌘㌧㌃㌶㍑㍗㌍㌦㌣㌫㍊㌻㎜㎝㎞㎎㎏㏄㎡㍻〝〟№㏍℡㊤㊥㊦㊧㊨㈱㈲㈹㍾㍽㍼≒≡∫∮∑√⊥∠∟⊿∵∩∪]+/u', '', $Title);
-		
+
 		if (mb_strwidth($Title) > 80) {
 			$Title = substr($Title, 0, 80);
 			$logs[] = "('".$db->esc($username)."',".$db->esc($new_log_id).", 2, '商品番号「".$obj->product_no."」のタイトルが80文字を超えていたため省略しました。','Title')";
 			$errorMsg = $errorMsg."<br>商品番号「".$obj->product_no."」のタイトルが80文字を超えていたため省略しました。";
 			$new_log_id++;
 		}
-		
+
 		$Pic_URL = explode('/[\r\n\s]+/', $obj -> img_url);
 		$Pic_URL = implode('|', $Pic_URL);
 		if ($use_pc_introduce) {
@@ -326,7 +326,7 @@ if ($username) {
 		C_Color,
 		C_Size,
 		C_Country_Manufacture,
-		Condition_Description) values( 
+		Condition_Description) values(
 		'".$db->esc($username)."',
 		".$db->esc($id).",
 		'".$db->esc($action)."',
@@ -381,7 +381,7 @@ if ($username) {
 			$message .= 'Whole query: ' . $sql;
 			die($message);
 		}
-		
+
 		if($category == "") {
 			//ログ
 			$column=$obj -> column_name;
@@ -397,10 +397,10 @@ if ($username) {
 		$email = ADMIN_EMAIL;
 	}
 	$db -> senddone($username, strval($new_id), $email);
-	
+
 	//完了ログ
 	$logs[] = "('".$db->esc($username)."',".$db->esc($new_log_id).", 5, 'eBayデータへの変換が完了しました。','')";
-	
+
 	//ログをまとめてDBに保存
 	$sql = "insert into log_tbl (username, log_id, msg_flg, msg, column_name) values ". implode(',', $logs);
 	$rc3 = $db -> Exec($sql);
@@ -409,7 +409,7 @@ if ($username) {
 		$message .= 'Whole query: ' . $sql;
 		die($message);
 	}
-	
+
 	$db -> close();
 
 	var_dump('finished.');
@@ -420,9 +420,9 @@ if ($username) {
 function changeCat($db,$rk_dir_id, $username) {
 
 	$sql = "select * from  `change_mst_tbl` where (username = '".$db->esc($username)."' OR username = '') and rk_dir_id = '".$db->esc($rk_dir_id)."' AND ebay_cat_id != '' ORDER BY username DESC LIMIT 1";
-	
+
 	$rc = $db -> Exec($sql);
-	
+
 	if($obj = $db -> fetch_object($rc)) {
 		return $obj -> ebay_cat_id;
 	}else{
@@ -443,7 +443,7 @@ function convertString(&$string_mst, &$row) {
 		}
 
 		switch ($obj['action_type']) {
-			
+
 			case '追加':
 				if ($obj['word_order'] == '語頭'){
 					$change_text = $obj['after_str'] . $change_text;
@@ -451,28 +451,28 @@ function convertString(&$string_mst, &$row) {
 					$change_text = $change_text . $obj['after_str'];
 				}
 				break;
-				
+
 			case '置換':
 				$change_text = preg_replace($obj['before_str'], $obj['after_str'], $change_text);
 				break;
-			
+
 			case '削除':
 				$change_text = preg_replace($obj['before_str'], '', $change_text);
 				break;
-			
+
 			case '範囲置換':
 				if (preg_match_all('/'.$obj['start_str'].'/u', $change_text, $match, PREG_OFFSET_CAPTURE)) {
 					$start_pos = $match[0][$obj['start_str_no']-1][1];
 					if (preg_match_all('/'.$obj['end_str'].'/u', $change_text, $match, PREG_OFFSET_CAPTURE, $start_pos)) {
 						$end_pos = $match[0][$obj['end_str_no']-1][1] + strlen($match[0][$obj['end_str_no']-1][0]);
-						
+
 						$change_text = substr($change_text, 0, $start_pos).$obj['after_str'].substr($change_text, $end_pos);
-					}					
+					}
 				}
-				break;	
+				break;
 		}
-		
-	}	
+
+	}
 
 }
 
