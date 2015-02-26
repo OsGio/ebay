@@ -1,19 +1,19 @@
-<?php include('header.php'); 
+<?php include('header.php');
 	require_once("common/rakuten_header.php");
 	$username = $_SESSION["CONVERTER_USERID"];
 	$uploaddir = 'csv/';
 	$uploadfile = $uploaddir .$username."_". $_FILES['item']['name'];
 	$GLOBALS['announce'] = '';
-	
+
 	function transferIframe($desc){
 		$patterns[0] = '/<iframe src/';
-		$patterns[1] = '/<\/iframe>/';		
+		$patterns[1] = '/<\/iframe>/';
 		$replacements[0] = '<object data';
 		$replacements[1] = '<\/object>';		
 		$desc = preg_replace($patterns, $replacements,$desc);
 		return $desc;
 	}
-	
+
 //楽天CSV取込み
 $db = new dbclass();
 if (isset($_GET["exec"]) && $_GET["exec"] == "1") {
@@ -41,7 +41,7 @@ function insert_data($db,$uploadfile) {
 
 	$username = $_SESSION["CONVERTER_USERID"];
 	//アップロードするデータと重複する既存データを削除
-//	$sql = "delete from rakuten_item_tbl where username='$username'"; 
+//	$sql = "delete from rakuten_item_tbl where username='$username'";
 //	$db -> Exec($sql);
 	$product_nos = array();
 	$fp = fopen($uploadfile, 'r');
@@ -68,16 +68,16 @@ function insert_data($db,$uploadfile) {
 			}else{
 			$columnnames = $columnnames."@tmpclmnm".$i++.",";
 			}
-		}	
+		}
 		$columnnames = substr($columnnames,0,-1);
 		$setnames = substr($setnames,0,-1);
 
 		//最新取込み
 		$doubleQ = '"';
-		$newsql = "LOAD DATA LOCAL INFILE '$uploadfile' REPLACE 
+		$newsql = "LOAD DATA LOCAL INFILE '$uploadfile' REPLACE
 INTO TABLE rakuten_item_tbl
 FIELDS TERMINATED BY ',' ENCLOSED BY '".$doubleQ."'
- LINES TERMINATED BY '\r\n' 
+ LINES TERMINATED BY '\r\n'
  IGNORE 1 LINES (".$columnnames.") SET  username='".$db->esc($username)."',".$setnames;
 
 		$result = $db -> Exec($newsql);
@@ -100,7 +100,7 @@ FIELDS TERMINATED BY ',' ENCLOSED BY '".$doubleQ."'
 function insert_rk_dir($db) {
 
 	$username = $_SESSION["CONVERTER_USERID"];
-		
+
 	//登録済みのディレクトリIDの対応表を取得
 	$sql = "SELECT rakuten_item_tbl.directory_id, change_mst_tbl.rk_dir_id, change_mst_tbl.ebay_cat_id FROM rakuten_item_tbl LEFT JOIN change_mst_tbl ON rakuten_item_tbl.directory_id = change_mst_tbl.rk_dir_id AND (change_mst_tbl.username = '".$db->esc($username)."' OR change_mst_tbl.username = '') WHERE rakuten_item_tbl.username = '".$db->esc($username)."'";
 
@@ -128,9 +128,9 @@ function insert_rk_dir($db) {
 
 //取り込み済みのデータ件数を取得
 function count_data($db) {
-	
+
 	$username = $_SESSION["CONVERTER_USERID"];
-	
+
 	$sql = "select count(*) as total from `rakuten_item_tbl` where username = '$username'";
 	$rc = $db -> Exec($sql);
 	while ($obj = $db -> fetch_object($rc)) {
@@ -166,25 +166,25 @@ if(isset($_GET["exec"]) && $_GET["exec"] == "2"){
 	$('.td_description').click(function(){
 		if ($(this).hasClass('description_close')) {
 			$(this).removeClass('description_close');
-			$(this).addClass('description_swing');			
-			$(this).animate({ 
+			$(this).addClass('description_swing');
+			$(this).animate({
 				width: "900px"
 				}, 1500, 'swing', function(){
 				$(this).removeClass('description_swing');
-				$(this).addClass('description_open');				
+				$(this).addClass('description_open');
 			});
 
 		} else {
-			$(this).animate({ 
+			$(this).animate({
 				width: "400px"
 				}, 1000, 'swing', function(){
 				$(this).removeClass('description_open');
-				$(this).addClass('description_close');				
+				$(this).addClass('description_close');
 			});
 		}
 	});
   });
-  
+
   function importcsv(){
   	if(document.frm.item.value == "") {
   		alert("商品ファイルを選択してください");
@@ -282,7 +282,7 @@ while ($obj = $db -> fetch_object($rc)) {
 </p>
 
 
-	
+
 
 
 <div align="center" style="margin:20px 0;">
@@ -294,7 +294,7 @@ while ($obj = $db -> fetch_object($rc)) {
 	 <h2 class="subtitle" align="center">取込済みデータ参照</h2>
 
 	 取込件数：<?php echo count_data($db);?>件
-	 
+
 
 </div><!-- /content -->
 
@@ -373,7 +373,7 @@ while ($obj = $db -> fetch_object($rc)) {
 
 
 	</div>
-	 
+
 
 
 	 <br>

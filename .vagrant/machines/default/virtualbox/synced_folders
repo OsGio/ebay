@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/Users/user/Vagrant/ebay/www","disabled":false},"/var/www/html":{"guestpath":"/var/www/html","hostpath":"D:/Users/user/Vagrant/ebay/www/html","disabled":false}}}
+{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"/Users/sugiharanaoki/Documents/vagrant/ebay/html","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/sugiharanaoki/Documents/vagrant/ebay","disabled":false}}}

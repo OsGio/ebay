@@ -8,3 +8,5 @@
     8  ln -fs /vagrant /var/www/html
     9  history
    10  history > command_ebay.txt
+
+
