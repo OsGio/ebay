@@ -22,7 +22,8 @@ if(isset($_GET) && $_GET["exec"]==4)
     //マスターレコードの生成
     $master = $sku->createMaster($result);
     //DBへ保存
-    $sku->importSku($result);
+    $sku->importSku($result, $master);
+var_dump($master);exit;
 
 
 

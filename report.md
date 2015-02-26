@@ -7,3 +7,7 @@
     )
 ・ビューの追加
 ・画像ファイル作成
+・item_url = varchar, not int
+
+
+質問事項：：

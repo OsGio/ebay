@@ -1,6 +1,8 @@
 <?php
+require 'common/db.php';
 
 Class SKU{
+
 
 // var_dump('here');exit;
 public $header = array('Action', 'Category', 'RelationshipDetails[]');
@@ -91,42 +93,84 @@ public function castVal($row){
 
 }
 
-public function createMaster($result){
 
-
-    $relationship_details = self::array_column($result, 'option_name_01');
-    //$relationship_details = $array_map('makeUnion', $result);
-var_dump($relationship_details);exit;
-
-/*
-    foreach($result as $r)
-    {
-        $item_url = $r['item_url'];
-        $relationship_details = function($r){
-            $option_name = array_column($r['option_name_01']);
-            return $option_name;
-        }
-    }
+/**
+*
+*
+* todo:複数アイテム一括インポート対応
 */
+
+public function createMaster($result, $Type01='Type01', $Type02='Type02'){
+
+    $option_name_01 = self::array_column($result, 'option_name_01');
+    $option_name_01 = array_unique($option_name_01);
+    $option_name_02 = self::array_column($result, 'option_name_02');
+    $option_name_02 = array_unique($option_name_02);
+    $item_url = self::array_column($result, 'item_url');
+    $item_url = array_unique($item_url);
+    // 識別子が必要なら以下アンコメント
+    // $option_id_01 = self::array_column($result, 'option_id_01');
+    // $option_id_01 = array_unique($option_id_01);
+    // $option_id_02 = self::array_column($result, 'option_id_02');
+    // $option_id_02 = array_unique($option_id_02);
+
+    $relationship_details = "$Type01=". implode(';', $option_name_01) .
+                            '|'. "$Type02=". implode(';', $option_name_02);
+    $item_url = implode('', $item_url); //注）複数ならばここを条件分け
+
+    $master = array( 'relationship_details' => $relationship_details, 'item_url' => $item_url, 'master_flg' => 1, 'Type01' => $Type01, 'Type02' => $Type02 );
+    return $master;
 
 }
 
 
 
 
-public function importSku($result){
+/**
+*
+* todo:preparedステートメントなし？
+*/
+
+public function importSku($result, $master){
 
     $db = new dbclass();
 
+    //masterデータを先に生成
+    // $sql = "INSERT INTO sku_items (item_url, action, relationship, relationsshipDetails, quantity, start_price, master_flg)
+    //         VALUES (?, ?, null, ?, null, ?, 1)";
+    // $stmt = $db->prepare($sql);
+//    for($i=0; $i<count($master); $i++)
+    // foreach($master as $m)
+    // {
+        if(!isset($master['action'])){ $master['action'] = 'Add'; }
+        $sql = "insert into `sku_items` (item_url, action, relationship, relationship_details, quantity, start_price, master_flg)
+        values ('". $db->esc($master['item_url']) ."', '". $db->esc($master['action']) ."', null, '".$db->esc($master['relationship_details'])."', null, null, 1)";
+    // }
+        $db -> Exec($sql);
+
+
+
+$Type01 = $master['Type01'];
+$Type02 = $master['Type02'];
+
+
+
     foreach($result as $r)
     {
-        $sql = "INSERT INTO sku_items (category, relationship, relationsshipDetails, quantity, start_price) VALUES (
+        $r['relationship'] = "$Type01=". $r['option_name_01'] ."|$Type02=". $r['option_name_02'];
 
-        )";
+        $sql = "insert into `sku_items` (item_url, action, relationship, relationship_details, quantity, start_price, master_flg)
+        values ('". $db->esc($r['item_url']) ."', null, null, '".$db->esc($r['relationship'])."', ". $db->esc($r['quantity']) .", null, 0)";
 
+        $db-> Exec($sql);
     }
-var_dump($rows);exit;
+// 
+//
+//
+// var_dump($sql);exit;
 
+
+print("finished!");exit;
 }
 
 
