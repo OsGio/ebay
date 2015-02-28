@@ -1,5 +1,7 @@
 <?php
 require 'common/db.php';
+require 'common/SC_transAPI.php';
+//require_once 'common/NET/Socket.php';
 
 Class SKU{
 
@@ -20,8 +22,14 @@ public $must = array('item_url', 'option_name01', 'optoin_id01', 'option_name02'
 //またそれらが何行目にあるかを配列番号に換算して保持
 public $col = array(1, 5, 6, 7, 8, 10);
 
+private $username;
+
+
 
 public function __construct(){
+    if($_SESSION["CONVERTER_USERID"]){
+        $this->username = $_SESSION["CONVERTER_USERID"];
+    }
     return $this;
 }
 
@@ -35,7 +43,10 @@ protected function mustSelect($total){
 }
 
 
-
+/**
+* @param rows 改行区切りの配列
+* @return rows 改行のみの空の配列を取り除いたモノ
+*/
 // 配列の最後が改行コードのみならば除外 ...beta
 public function releaseN($rows){
     if(preg_match('/.*[a-zA-Z0-9].*/', end($rows))==false)
@@ -50,7 +61,12 @@ public function releaseN($rows){
 }
 
 
-// 各配列に分割 かつ 必要項目をキーに値を抽出
+
+/**
+* @param row 行単位に分割したファイルの中身
+* @return result ,区切りで配列化 & テーブル保存用にキーを英語に変換( 楽天仕様 2015.02.28)
+* 各配列に分割 かつ 必要項目をキーに値を抽出
+*/
 public function castVal($row){
     foreach($row as $r)
     {
@@ -95,30 +111,69 @@ public function castVal($row){
 
 
 /**
-*
+* @param result
 *
 * todo:複数アイテム一括インポート対応
 */
 
 public function createMaster($result, $Type01='Type01', $Type02='Type02'){
 
-    $option_name_01 = self::array_column($result, 'option_name_01');
-    $option_name_01 = array_unique($option_name_01);
-    $option_name_02 = self::array_column($result, 'option_name_02');
-    $option_name_02 = array_unique($option_name_02);
+    //item_url毎に配列化
     $item_url = self::array_column($result, 'item_url');
     $item_url = array_unique($item_url);
+    $item_url_mst = $item_url;
+    foreach($item_url_mst as $i)
+    {
+        foreach($result as $r)
+        {
+            if($i==$r['item_url'])
+            {
+                $results[$i][] = $r;
+            }
+        }
+    }
+// print "<pre>";
+// var_dump($results);
+// print "<pre>";
+// exit;
+
+
     // 識別子が必要なら以下アンコメント
     // $option_id_01 = self::array_column($result, 'option_id_01');
     // $option_id_01 = array_unique($option_id_01);
     // $option_id_02 = self::array_column($result, 'option_id_02');
     // $option_id_02 = array_unique($option_id_02);
 
-    $relationship_details = "$Type01=". implode(';', $option_name_01) .
-                            '|'. "$Type02=". implode(';', $option_name_02);
-    $item_url = implode('', $item_url); //注）複数ならばここを条件分け
+    foreach($results as $r)
+    {
+        $option_name_01 = self::array_column($r, 'option_name_01');
+        $option_name_01 = array_unique($option_name_01);
+// var_dump($option_name_01);exit;
+        $option_name_02 = self::array_column($r, 'option_name_02');
+        $option_name_02 = array_unique($option_name_02);
 
-    $master = array( 'relationship_details' => $relationship_details, 'item_url' => $item_url, 'master_flg' => 1, 'Type01' => $Type01, 'Type02' => $Type02 );
+        //翻訳指定（日本語 => 英語）
+        $country = array('from' => 'ja', 'to' => 'en');
+        foreach($option_name_01 as $op1)
+        {
+            $option_name_01en[] = self::Translate($op1, $country);
+        }
+        foreach($option_name_02 as $op2)
+        {
+            $option_name_02en[] = self::Translate($op2, $country);
+        }
+        $relationship_details = "$Type01=". implode(';', $option_name_01en) .
+                                '|'. "$Type02=". implode(';', $option_name_02en);
+
+        $master[$r[0]['item_url']] = array( 'relationship_details' => $relationship_details, 'item_url' => $r[0]['item_url'], 'master_flg' => 1, 'Type01' => $Type01, 'Type02' => $Type02 );
+
+        //初期化
+        $option_name_01en = array(); $option_name_02en = array();
+    }
+
+    //$item_url = implode('', $item_url); //注）複数ならばここを条件分け
+
+
     return $master;
 
 }
@@ -135,19 +190,29 @@ public function importSku($result, $master){
 
     $db = new dbclass();
 
+    //$this->username = $_SESSION["CONVERTER_USERID"];
+
     //masterデータを先に生成
     // $sql = "INSERT INTO sku_items (item_url, action, relationship, relationsshipDetails, quantity, start_price, master_flg)
     //         VALUES (?, ?, null, ?, null, ?, 1)";
     // $stmt = $db->prepare($sql);
-//    for($i=0; $i<count($master); $i++)
-    // foreach($master as $m)
-    // {
-        if(!isset($master['action'])){ $master['action'] = 'Add'; }
-        $sql = "insert into `sku_items` (item_url, action, relationship, relationship_details, quantity, start_price, master_flg)
-        values ('". $db->esc($master['item_url']) ."', '". $db->esc($master['action']) ."', null, '".$db->esc($master['relationship_details'])."', null, null, 1)";
-    // }
-        $db -> Exec($sql);
 
+        if(!isset($master['action'])){ $master['action'] = 'Add'; }
+
+        // sku_itemsに登録
+        $sql = "insert into `sku_items` (item_url, action, relationship, relationship_details, quantity, start_price, master_flg, this->username)
+        values (
+                '". $db->esc($master['item_url']) ."',
+                '". $db->esc($master['action']) ."',
+                    null,
+                '".$db->esc($master['relationship_details'])."',
+                    null,
+                    null,
+                    1,
+                '". $db->esc($this->username) ."'
+                )";
+
+        $db -> Exec($sql);
 
 
 $Type01 = $master['Type01'];
@@ -159,21 +224,48 @@ $Type02 = $master['Type02'];
     {
         $r['relationship'] = "$Type01=". $r['option_name_01'] ."|$Type02=". $r['option_name_02'];
 
-        $sql = "insert into `sku_items` (item_url, action, relationship, relationship_details, quantity, start_price, master_flg)
-        values ('". $db->esc($r['item_url']) ."', null, null, '".$db->esc($r['relationship'])."', ". $db->esc($r['quantity']) .", null, 0)";
+        $sql = "insert into `sku_items` (item_url, action, relationship, relationship_details, quantity, start_price, master_flg, this->username)
+        values (
+                '". $db->esc($r['item_url']) ."',
+                null,
+                null,
+                '".$db->esc($r['relationship'])."',
+                ". $db->esc($r['quantity']) .",
+                null,
+                0,
+                '". $db->esc($this->username) ."'
+                )";
 
         $db-> Exec($sql);
     }
-// 
-//
-//
-// var_dump($sql);exit;
-
-
-print("finished!");exit;
 }
 
 
+/**
+* translate A word into B.
+* @param word 翻訳対象
+* @param ( arr ) country ('from' => A, 'to' => B) 翻訳国指定 A into B.
+* @return 単語
+*/
+
+private function Translate($word, $country){
+
+    extract($country);
+
+    $db = new dbclass;
+
+    //翻訳APIのインスタンス生成
+    $sql = "select * from  `user_tbl` where username = '".$db->esc($this->username)."'";
+    $user_rc = $db -> Exec($sql);
+    if ($obj_user = $db -> fetch_object($user_rc)) {
+    	$trans = new SC_transAPI('203916a788aa313171d9c22e85b82cf9', $obj_user->trans_api_key, $obj_user->trans_api_secret_key);
+    }
+
+    $translated = trim(strip_tags($trans->trans($word, $from, $to)));
+
+    return $translated;
+
+}
 
 
 

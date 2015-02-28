@@ -21,7 +21,7 @@ if ($obj_user = $db -> fetch_object($user_rc)) {
 	$trans = new SC_transAPI('203916a788aa313171d9c22e85b82cf9', $obj_user->trans_api_key, $obj_user->trans_api_secret_key);
 }
 
-var_dump($user_name);exit;
+//var_dump($username);exit;
 if ($username) {
 
 	//変換
