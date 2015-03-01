@@ -1,17 +1,19 @@
 <?php
 ini_set('display_errors', 0);
-	header('Cache-Control: public');
-	header('Pragma: public');
-	header("Content-Type: application/octet-stream");
-	date_default_timezone_set('Asia/Tokyo');
-	header("Content-Disposition: attachment; filename=ebay_items".date('YmdHis').".csv");
-	require_once("common/auth.php");
+// 	header('Cache-Control: public');
+// 	header('Pragma: public');
+// 	header("Content-Type: application/octet-stream");
+// 	date_default_timezone_set('Asia/Tokyo');
+// 	header("Content-Disposition: attachment; filename=ebay_items".date('YmdHis').".csv");
+// //fortest	require_once("common/auth.php");
 	require_once("common/db.php");
 
 	 session_start();
 	$db = new dbclass();
 
+	$username = 'misaki@wasab.net'; //test
 
+//var_dump($db->esc($username));exit;
 	//item specificsを取得
 	$sql = "select * from  `ebay_item_specifics`";
 	$rc = $db -> Exec($sql);
@@ -23,7 +25,14 @@ ini_set('display_errors', 0);
 	}
 
 
-
+	// ADD: sku_itemsを取得
+	$sql = "SELECT sku_items.*, ebay_result_tbl.custom_label from sku_items LEFT JOIN ebay_result_tbl ON sku_items.item_url = ebay_result_tbl.custom_label WHERE ebay_result_tbl.username = '".$db->esc($username)."'";
+	$rc = $db -> Exec($sql);
+	$sku = array();
+	while($obj = $db -> fetch_object($rc)){
+	$sku = "\"". $obj->item_url ."\"";
+	//$sku[] =
+	}
 
 
 	//そのユーザーのitem specificsのデフォルト設定を取得
@@ -31,6 +40,7 @@ ini_set('display_errors', 0);
 	$rc = $db -> Exec($sql);
 	$obj = $db -> fetch_object($rc);
 	$item_specifics_default = unserialize($obj->item_specifics_default);
+
 
 
 	 	//CSVダウンロード
@@ -42,6 +52,7 @@ ini_set('display_errors', 0);
 	while($obj = $db -> fetch_object($rc)) {
 		$str= "\"" . $obj ->  action . "\",";
 		$str=$str. "\"" . $obj ->  custom_label . "\",";
+var_dump($str);exit;
 		$str=$str. "\"" . $obj ->  category . "\",";
 		$str=$str. "\"" . $obj ->  Store_Category . "\",";
 		$str=$str. "\"" . $obj ->  Title . "\",";
@@ -85,6 +96,8 @@ ini_set('display_errors', 0);
 		$str=$str. "\"" . $obj ->  Intl_Shipping_Service1_Cost . "\",";
 		$str=$str. "\"" . $obj ->  Intl_Shipping_Service1_Locations . "\",";
 		$str=$str. "\"" . $obj ->  Intl_Shipping_Service1_Priority . "\",";
+
+
 
 		$category_item_specificses = explode('|', $obj->item_specifics);
 

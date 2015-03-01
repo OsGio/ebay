@@ -1,7 +1,8 @@
 <?php include('header.php');
 	require_once("common/rakuten_header.php");
 	$username = $_SESSION["CONVERTER_USERID"];
-	$uploaddir = 'csv/';
+//	$uploaddir = 'csv/';
+	$uploaddir = '/var/www/csv/';
 	$uploadfile = $uploaddir .$username."_". $_FILES['item']['name'];
 	$GLOBALS['announce'] = '';
 
@@ -20,7 +21,6 @@ if (isset($_GET["exec"]) && $_GET["exec"] == "1") {
 	if($_FILES['item']['name'] <> "") {
 		//アップロードされたCSVを読んで改行コードを統一
 		$csv_data = strtr(file_get_contents($_FILES['item']['tmp_name']), array_fill_keys(array("\r\n", "\r", "\n"), "\r\n"));
-//var_dump($csv_data);
 		//ファイルを保存
 		if (file_put_contents($uploadfile, $csv_data)) {
 			//DBにインサート
@@ -38,11 +38,12 @@ $db -> close();
 function insert_data($db,$uploadfile) {
 
 //$uploadfile="E:/develop/wasabi/ebay/rakuten_item.csv";
+//$uploadfile="/var/www/csv/sample.csv";
 var_dump('upload');
 	$username = $_SESSION["CONVERTER_USERID"];
 	//アップロードするデータと重複する既存データを削除
-//	$sql = "delete from rakuten_item_tbl where username='$username'";
-//	$db -> Exec($sql);
+	$sql = "delete from rakuten_item_tbl where username='$username'";
+	$db -> Exec($sql);
 	$product_nos = array();
 	$fp = fopen($uploadfile, 'r');
 	while ($res = fgetcsv($fp, 1024)) {
@@ -74,13 +75,20 @@ var_dump('upload');
 
 		//最新取込み
 		$doubleQ = '"';
-		$newsql = "LOAD DATA LOCAL INFILE '$uploadfile' REPLACE
+// 		$newsql = "LOAD DATA LOCAL INFILE '$uploadfile' REPLACE
+// INTO TABLE rakuten_item_tbl
+// FIELDS TERMINATED BY ',' ENCLOSED BY '".$doubleQ."'
+//  LINES TERMINATED BY '\r\n'
+//  IGNORE 1 LINES (".$columnnames.") SET  username='".$db->esc($username)."',".$setnames;
+$newsql = "LOAD DATA LOCAL INFILE '$uploadfile' REPLACE
 INTO TABLE rakuten_item_tbl
 FIELDS TERMINATED BY ',' ENCLOSED BY '".$doubleQ."'
- LINES TERMINATED BY '\r\n'
- IGNORE 1 LINES (".$columnnames.") SET  username='".$db->esc($username)."',".$setnames;
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES";
+// (".$columnnames.") SET  username='".$db->esc($username)."',".$setnames;
 
 		$result = $db -> Exec($newsql);
+var_dump($columnnames);exit;
 
 		if (!$result) {
 			$message = 'Invalid query: ' . mysql_error() . "\n";
@@ -91,7 +99,7 @@ FIELDS TERMINATED BY ',' ENCLOSED BY '".$doubleQ."'
 		}
 	}
 	fclose($fp);
-//		$db -> close();
+		$db -> close();
 
 	}
 

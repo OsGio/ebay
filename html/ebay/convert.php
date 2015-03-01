@@ -19,7 +19,7 @@ if ($db->NumRows($rc) > 0) {
 
 if (isset($_GET["exec"]) && $_GET["exec"] == "1") {
 
-//fortest	$sql = "delete from  `ebay_result_tbl` where username = '".$db->esc($username)."'";
+	$sql = "delete from  `ebay_result_tbl` where username = '".$db->esc($username)."'";
 	$rc = $db -> Exec($sql);
 	if(!rc) {
 		$message = 'Invalid query: ' . mysql_error() . "\n";
@@ -27,14 +27,14 @@ if (isset($_GET["exec"]) && $_GET["exec"] == "1") {
 		die($message);
 	}
 
-	//exec("php /home/wasab/www/eBay_converter/convert_rakuten.php $username");
+	exec("php /home/wasab/www/eBay_converter/convert_rakuten.php $username");
 	exec("nohup /usr/bin/php /var/www/html/ebay/convert_rakuten.php $username > /dev/null 2>&1 &");
 	$convert_message = '商品データをeBay向けデータへ変換しています。。。';
 	$finish_message = 'データの変換が完了しました！';
 
 } elseif (isset($_GET["exec"]) && $_GET["exec"] == "3") {
 
-	//exec("php /home/wasab/www/eBay_converter/ebay_addItem.php $username");
+	exec("php /home/wasab/www/eBay_converter/ebay_addItem.php $username");
 	exec("nohup /usr/bin/php /var/www/html/ebay/ebay_addItem.php $username > /dev/null 2>&1 &");
 	$convert_message = 'eBayへ商品を出品しています。。。';
 	$finish_message = 'eBayへの出品が完了しました！';

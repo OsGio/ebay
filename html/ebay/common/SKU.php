@@ -148,7 +148,6 @@ public function createMaster($result, $Type01='Type01', $Type02='Type02'){
     {
         $option_name_01 = self::array_column($r, 'option_name_01');
         $option_name_01 = array_unique($option_name_01);
-// var_dump($option_name_01);exit;
         $option_name_02 = self::array_column($r, 'option_name_02');
         $option_name_02 = array_unique($option_name_02);
 
@@ -179,6 +178,26 @@ public function createMaster($result, $Type01='Type01', $Type02='Type02'){
 }
 
 
+/**
+*
+*
+*/
+public function saveResult(){
+
+//////    save to :: ebay_result_table.relationship
+    $db = new dbclass();
+
+    $sql = "SELECT * FROM `sku_temp` RIGHT JOIN `sku_items` USING (id)";
+
+    $temp = $db -> Exec($sql);
+
+    while ($arr = $temp->fetch(PDO::FETCH_ASSOC)) {
+var_dump($arr);exit;
+    echo $arr['name'];
+ }
+
+
+}
 
 
 /**
@@ -209,6 +228,7 @@ public function importSku($result, $master){
                     )";
 
             $db -> Exec($sql);
+//var_dump($db->insert_id);exit;
 
 
     // $Type01 = $master['Type01'];
@@ -239,7 +259,7 @@ $Type02 = 'Type02';
                 0,
                 '". $db->esc($this->username) ."'
                 )";
-// var_dump($sql);exit;
+
         $db-> Exec($sql);
     }
 

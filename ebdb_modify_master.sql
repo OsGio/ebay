@@ -29,6 +29,16 @@ CREATE TABLE sku_items (
     master_flg TINYINT(4) DEFAULT 0
 );
 alter table sku_items add username varchar(30) not null;
+alter table sku_items add created_datetime timestamp null default CURRENT_TIMESTAMP;
+
+
+
+CREATE TABLE sku_temp (
+    id INT not null,
+    comment TEXT null default null
+);
+
+
 
 
 
@@ -38,6 +48,13 @@ ALTER TABLE ebay_result_tbl ADD Relarionship varchar(255);
 ALTER TABLE ebay_result_tbl ADD RelationshipDetails  varchar(255);
 
 alter table ebay_result_tbl ADD item_url varchar(255);
+
+
+-- INSERT INTO ebay_result_tbl (username, action, custom_label, category, Description , Format, Start_Price, Quantity) VALUES ('misaki@wasab.net', 'Add', 'teeshirts01', 169291, 'FixedPrice', 1298, 1);
+
+update ebay_result_tbl set username = 'misaki@wasab.net' where custom_label = '1638RY';
+update ebay_result_tbl set custom_label = 'teeshirts01' where username = 'misaki@wasab.net';
+
 
 --
 -- ebay_result_tbl.custom_label join sku_items.item_url

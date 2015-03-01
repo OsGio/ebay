@@ -28,6 +28,7 @@ if(isset($_GET) && $_GET["exec"]==4)
     $master = $sku->createMaster($result);
     //DBへ保存
     $sku->importSku($result, $master);
+    //$sku->saveResult();
 
 
 header("Location: http://".$_SERVER["HTTP_HOST"]."/ebay/directory.php");

@@ -1,1 +1,1 @@
-{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"/Users/sugiharanaoki/Documents/vagrant/ebay/html","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/sugiharanaoki/Documents/vagrant/ebay","disabled":false}}}
+{"virtualbox":{"/var/www/html":{"owner":"vagrant","group":"apache","mount_options":["dmode=777","fmode=777"],"guestpath":"/var/www/html","hostpath":"/Users/sugiharanaoki/Documents/vagrant/ebay/html","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/sugiharanaoki/Documents/vagrant/ebay","disabled":false}}}
