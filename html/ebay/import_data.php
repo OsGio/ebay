@@ -9,7 +9,7 @@
 		$patterns[0] = '/<iframe src/';
 		$patterns[1] = '/<\/iframe>/';
 		$replacements[0] = '<object data';
-		$replacements[1] = '<\/object>';		
+		$replacements[1] = '<\/object>';
 		$desc = preg_replace($patterns, $replacements,$desc);
 		return $desc;
 	}
@@ -18,9 +18,9 @@
 $db = new dbclass();
 if (isset($_GET["exec"]) && $_GET["exec"] == "1") {
 	if($_FILES['item']['name'] <> "") {
-
 		//アップロードされたCSVを読んで改行コードを統一
 		$csv_data = strtr(file_get_contents($_FILES['item']['tmp_name']), array_fill_keys(array("\r\n", "\r", "\n"), "\r\n"));
+//var_dump($csv_data);
 		//ファイルを保存
 		if (file_put_contents($uploadfile, $csv_data)) {
 			//DBにインサート
@@ -38,7 +38,7 @@ $db -> close();
 function insert_data($db,$uploadfile) {
 
 //$uploadfile="E:/develop/wasabi/ebay/rakuten_item.csv";
-
+var_dump('upload');
 	$username = $_SESSION["CONVERTER_USERID"];
 	//アップロードするデータと重複する既存データを削除
 //	$sql = "delete from rakuten_item_tbl where username='$username'";

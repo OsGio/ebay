@@ -1,5 +1,5 @@
 <?php
-ini_set('display_errors', 0); 	
+ini_set('display_errors', 0);
 	header('Cache-Control: public');
 	header('Pragma: public');
 	header("Content-Type: application/octet-stream");
@@ -21,6 +21,10 @@ ini_set('display_errors', 0);
 		$item_specifics[] = $obj->name;
 		$csv_header_item_specifics .= ',C:'.$obj->name;
 	}
+
+
+
+
 
 	//そのユーザーのitem specificsのデフォルト設定を取得
 	$sql = "SELECT item_specifics_default FROM  setting_tbl WHERE username = '".$db->esc($username)."' ";

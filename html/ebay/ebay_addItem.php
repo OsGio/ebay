@@ -18,9 +18,9 @@ $logs = array();
 	$uploaddir = 'csv/';
 	$uploadfile = $uploaddir .$username."_". $_FILES['item']['name'];
 
-	
+
 	//item specificsを取得
-	$sql = "select * from  `ebay_item_specifics`";	
+	$sql = "select * from  `ebay_item_specifics`";
 	$rc = $db -> Exec($sql);
 	$item_specifics = array();
 	$csv_header_item_specifics = '';
@@ -28,22 +28,22 @@ $logs = array();
 		$item_specifics[] =  $obj->name;
 		$csv_header_item_specifics .= ',C:'.$obj->name;
 	}
-	
+
 	//そのユーザーのitem specificsのデフォルト設定を取得
-	$sql = "SELECT item_specifics_default FROM  setting_tbl WHERE username = '".$db->esc($username)."' ";	
+	$sql = "SELECT item_specifics_default FROM  setting_tbl WHERE username = '".$db->esc($username)."' ";
 	$rc = $db -> Exec($sql);
-	$obj = $db -> fetch_object($rc);	
+	$obj = $db -> fetch_object($rc);
 	$item_specifics_default = unserialize($obj->item_specifics_default);
-	
-	
+
+
 	$sql = "SELECT ebay_result_tbl.*, ebay_mst.item_specifics FROM ebay_result_tbl LEFT JOIN ebay_mst ON ebay_result_tbl.category = ebay_mst.catetory_id WHERE ebay_result_tbl.username = '".$db->esc($username)."' ";
 	$rc = $db -> Exec($sql);
-	
+
     // 変換
     $errorMsg = "";
     $new_id = 0;
     $success_cnt = 0;
-		
+
     //token取得
 	$sqle = "select * from `user_tbl` where username = '".$db->esc($username)."' ";
 	$token = '';
@@ -80,7 +80,7 @@ $logs = array();
 		} else {
 			$product['Duration'] = $obj -> Duration;
 		}
-var_dump($product['Duration']);
+//var_dump($product['Duration']);
 		$product['DispatchTimeMax'] = $obj -> Dispatch_Time_Max;
 		$product['ShippingService-1:Option'] = $obj -> Shipping_Service1_Option;
 		$product['ShippingService-1:Cost'] = $obj -> Shipping_Service1_Cost;
@@ -98,15 +98,15 @@ var_dump($product['Duration']);
 		$product['RestockingFeeValueOption'] = $obj -> Restocking_Fee_Value_Option;
 		$product['PayPalEmailAddress'] = $obj -> PayPal_Email_Address;
 		$product['PictureURL'] = $images[0];
-		
+
 
 		$category_item_specificses = explode('|', $obj->item_specifics);
-var_dump($category_item_specificses);
-var_dump($item_specifics);
+//var_dump($category_item_specificses);
+//var_dump($item_specifics);
 		foreach ($item_specifics as $value) {
-			
+
 			if (array_search($value, $category_item_specificses) !== false) {
-			
+
 				switch ($value) {
 					case 'Size Type':
 						if ($item_specifics_default[$value]) {
@@ -135,12 +135,12 @@ var_dump($item_specifics);
 		}
 
 		$product['C:Country of Manufacture'] = $obj -> C_Country_Manufacture;
-var_dump($product);
+//var_dump($product);
 		$itemID="";
 		// Convert the xml response string in an xml object
 		$xmlResponse = false;
 		$xmlResponse = $ebayClass->addItem($product, $item_specifics);
-var_dump($xmlResponse);
+//var_dump($xmlResponse);
 		// Verify that the xml response object was created
 
 		$ebay_msg="";
@@ -152,7 +152,7 @@ var_dump($xmlResponse);
 				$ebay_msg=$xmlResponse->Errors->ShortMessage.'/'.$xmlResponse->Errors->LongMessage;
 			}
 		}
-		if($itemID=="") { 
+		if($itemID=="") {
 			$new_log_id++;
 			//ログ記録
 			$column=$obj -> column_name;
@@ -162,7 +162,7 @@ var_dump($xmlResponse);
 			}
 			$logs[] = "('".$db->esc($username)."',".$db->esc($new_log_id).", 2, '".$db->esc($msg)."','".$db->esc($column)."')";
 			$errorMsg = $errorMsg."\n".$msg;
-			
+
 		}else{
 			$success_cnt++;
 			$ebayUploadedImages = array();
@@ -194,11 +194,11 @@ var_dump($xmlResponse);
 		$email = ADMIN_EMAIL;
 	}
 	$db -> senddone2($username, strval($success_cnt), $email, $errorMsg);
-	
+
 	//完了ログ
 	$new_log_id++;
 	$logs[] = "('".$db->esc($username)."',".$db->esc($new_log_id).", 5, 'eBayへのアップロードが完了しました。','')";
-	
+
 	//ログをまとめてDBに保存
 	$sql = "insert into log_tbl (username, log_id, msg_flg, msg, column_name) values ". implode(',', $logs);
 	$rc3 = $db -> Exec($sql);
@@ -207,7 +207,7 @@ var_dump($xmlResponse);
 		$message .= 'Whole query: ' . $sql;
 		die($message);
 	}
-	
+
 	$db -> close();
 
 ?>

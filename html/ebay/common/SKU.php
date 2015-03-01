@@ -190,41 +190,45 @@ public function importSku($result, $master){
 
     $db = new dbclass();
 
-    //$this->username = $_SESSION["CONVERTER_USERID"];
+    $user_name = $this->username;
 
-    //masterデータを先に生成
-    // $sql = "INSERT INTO sku_items (item_url, action, relationship, relationsshipDetails, quantity, start_price, master_flg)
-    //         VALUES (?, ?, null, ?, null, ?, 1)";
-    // $stmt = $db->prepare($sql);
+    foreach($master as $m)
+    {
+        if(!isset($m['action'])){ $m['action'] = 'Add'; }
+            // sku_itemsに登録
+            $sql = "insert into `sku_items` (item_url, action, relationship, relationship_details, quantity, start_price, master_flg, username)
+            values (
+                    '". $db->esc($m['item_url']) ."',
+                    '". $db->esc($m['action']) ."',
+                        null,
+                    '".$db->esc($m['relationship_details'])."',
+                        null,
+                        null,
+                        1,
+                    '". $db->esc($this->username) ."'
+                    )";
 
-        if(!isset($master['action'])){ $master['action'] = 'Add'; }
-
-        // sku_itemsに登録
-        $sql = "insert into `sku_items` (item_url, action, relationship, relationship_details, quantity, start_price, master_flg, this->username)
-        values (
-                '". $db->esc($master['item_url']) ."',
-                '". $db->esc($master['action']) ."',
-                    null,
-                '".$db->esc($master['relationship_details'])."',
-                    null,
-                    null,
-                    1,
-                '". $db->esc($this->username) ."'
-                )";
-
-        $db -> Exec($sql);
+            $db -> Exec($sql);
 
 
-$Type01 = $master['Type01'];
-$Type02 = $master['Type02'];
+    // $Type01 = $master['Type01'];
+    // $Type02 = $master['Type02'];
 
 
+    }
 
+
+//タイプ指定 ※要修正
+$Type01 = 'Type01';
+$Type02 = 'Type02';
+
+
+    //翻訳して書き込み
+    $country = array('from' => 'ja', 'to' => 'en');
     foreach($result as $r)
     {
-        $r['relationship'] = "$Type01=". $r['option_name_01'] ."|$Type02=". $r['option_name_02'];
-
-        $sql = "insert into `sku_items` (item_url, action, relationship, relationship_details, quantity, start_price, master_flg, this->username)
+        $r['relationship'] = "$Type01=". self::Translate($r['option_name_01'], $country) ."|$Type02=". self::Translate($r['option_name_02'], $country);
+        $sql = "insert into `sku_items` (item_url, action, relationship, relationship_details, quantity, start_price, master_flg, username)
         values (
                 '". $db->esc($r['item_url']) ."',
                 null,
@@ -235,9 +239,10 @@ $Type02 = $master['Type02'];
                 0,
                 '". $db->esc($this->username) ."'
                 )";
-
+// var_dump($sql);exit;
         $db-> Exec($sql);
     }
+
 }
 
 

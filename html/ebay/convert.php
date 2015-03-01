@@ -19,7 +19,7 @@ if ($db->NumRows($rc) > 0) {
 
 if (isset($_GET["exec"]) && $_GET["exec"] == "1") {
 
-	$sql = "delete from  `ebay_result_tbl` where username = '".$db->esc($username)."'";
+//fortest	$sql = "delete from  `ebay_result_tbl` where username = '".$db->esc($username)."'";
 	$rc = $db -> Exec($sql);
 	if(!rc) {
 		$message = 'Invalid query: ' . mysql_error() . "\n";
