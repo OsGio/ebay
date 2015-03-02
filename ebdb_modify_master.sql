@@ -54,6 +54,8 @@ alter table ebay_result_tbl ADD item_url varchar(255);
 
 update ebay_result_tbl set username = 'misaki@wasab.net' where custom_label = '1638RY';
 update ebay_result_tbl set custom_label = 'teeshirts01' where username = 'misaki@wasab.net';
+update ebay_result_tbl set username = 'misaki@wasab.net' where custom_label = '4000545907200006';
+update ebay_result_tbl set custom_label = 'sweaterAAA' where username = 'misaki@wasab.net';
 
 
 --
